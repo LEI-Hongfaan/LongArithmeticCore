@@ -11,8 +11,8 @@ namespace UltimateOrb.Mathematics {
     using ULong_Misc = Internal.SizeOfModule.UInt64;
     using Int_Misc = Internal.SizeOfModule.Int32;
     using Long_Misc = Internal.SizeOfModule.Int64;
-    using UIntPtr_Misc = UIntPtr;
-    using IntPtr_Misc = IntPtr;
+    using UIntPtr_Misc = Internal.SizeOfModule.UIntPtr;
+    using IntPtr_Misc = Internal.SizeOfModule.IntPtr;
 
     using Math = Internal.System.Math;
 

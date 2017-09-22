@@ -29,10 +29,10 @@ namespace UltimateOrb.Mathematics {
 
         using UInt32_Misc = Internal.SizeOfModule.UInt32;
         using UInt64_Misc = Internal.SizeOfModule.UInt64;
-        using UIntPtr_Misc = UIntPtr;
+        using UIntPtr_Misc = Internal.SizeOfModule.UIntPtr;
         using Int32_Misc = Internal.SizeOfModule.Int32;
         using Int64_Misc = Internal.SizeOfModule.Int64;
-        using IntPtr_Misc = IntPtr;
+        using IntPtr_Misc = Internal.SizeOfModule.IntPtr;
 
         public static partial class Math {
 
@@ -160,6 +160,32 @@ namespace UltimateOrb.Mathematics {
             [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
             public static UInt64 SqrtRem(UInt64 radicand, out UInt64 remainder) {
                 return SqrtRem_A_F(radicand, out remainder);
+            }
+        }
+    }
+
+    namespace Internal.SizeOfModule {
+        using System = global::System;
+
+        internal static partial class IntPtr {
+
+            public static uint Size {
+
+                [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+                get {
+                    return unchecked((uint)System.IntPtr.Size);
+                }
+            }
+        }
+
+        internal static partial class UIntPtr {
+
+            public static uint Size {
+
+                [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+                get {
+                    return unchecked((uint)System.UIntPtr.Size);
+                }
             }
         }
     }
