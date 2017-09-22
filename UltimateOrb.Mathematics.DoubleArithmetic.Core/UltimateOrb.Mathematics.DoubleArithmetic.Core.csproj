@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <RootNamespace>UltimateOrb</RootNamespace>
+    <Authors>LEI Hongfaan</Authors>
+    <Company>LEI Hongfaan</Company>
+    <Product>UltimateOrb Libraries</Product>
+    <Description>Defines some operations to support Int128.</Description>
+    <Copyright>Copyright © 2017 LEI Hongfaan. Distributed under the MIT License.</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="DoubleArithmetic{Shift}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DoubleArithmetic{Shift}.cs</LastGenOutput>
+    </None>
+    <None Update="DoubleArithmetic{Increase,Decrease}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DoubleArithmetic{Increase,Decrease}.cs</LastGenOutput>
+    </None>
+    <None Update="DoubleArithmetic{Core}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DoubleArithmetic{Core}.cs</LastGenOutput>
+    </None>
+    <None Update="DoubleArithmetic{Compare}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DoubleArithmetic{Compare}.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DoubleArithmetic{Shift}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DoubleArithmetic{Shift}.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DoubleArithmetic{Increase,Decrease}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DoubleArithmetic{Increase,Decrease}.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DoubleArithmetic{Core}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DoubleArithmetic{Core}.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DoubleArithmetic{Compare}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DoubleArithmetic{Compare}.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
