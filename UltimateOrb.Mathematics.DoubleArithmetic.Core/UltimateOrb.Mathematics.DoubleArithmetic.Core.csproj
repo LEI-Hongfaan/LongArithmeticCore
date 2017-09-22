@@ -17,7 +17,7 @@
     <RepositoryUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core</PackageProjectUrl>
     <PackageTags>Int128</PackageTags>
-    <PackageVersion>1.0.2-alpha</PackageVersion>
+    <PackageVersion>1.0.3-alpha</PackageVersion>
     <Title>UltimateOrb.Mathematics.DoubleArithmetic.Core - UltimateOrb Libraries</Title>
     <AssemblyVersion>1.0</AssemblyVersion>
     <PackageReleaseNotes>Experimental.
@@ -50,11 +50,13 @@
       <LastGenOutput>DoubleArithmetic{Compare}.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
+  
+  <!--
   <ItemGroup>
-    <PackageReference Update="NETStandard.Library" Version="1.6.0" />
+    <PackageReference Update="NETStandard.Library" Version="1.0.0" />
   </ItemGroup>
-
+  -->
+  
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
