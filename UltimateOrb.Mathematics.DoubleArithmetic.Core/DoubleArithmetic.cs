@@ -10,6 +10,7 @@ namespace UltimateOrb.Mathematics {
     using Long = Int64;
 
     public static partial class DoubleArithmetic {
+
         /*
 #if DEBUG
         static DoubleArithmetic() {
@@ -276,7 +277,6 @@ namespace UltimateOrb.Mathematics {
             public static uint Size {
 
                 [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-
                 get {
                     return 8;
                 }

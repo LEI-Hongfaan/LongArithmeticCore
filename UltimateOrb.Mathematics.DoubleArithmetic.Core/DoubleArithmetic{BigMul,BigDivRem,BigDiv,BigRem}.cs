@@ -264,7 +264,7 @@ namespace UltimateOrb.Mathematics {
             highResult = unchecked((Long)r - (-(Long)((ULong)first >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & second) - (-(Long)((ULong)second >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & first));
             return q;
         }
-
+        
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         // primary overload
