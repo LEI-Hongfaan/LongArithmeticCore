@@ -11,7 +11,9 @@ namespace UltimateOrb.Mathematics {
     using ULong_Misc = Internal.SizeOfModule.UInt64;
     using Int_Misc = Internal.SizeOfModule.Int32;
     using Long_Misc = Internal.SizeOfModule.Int64;
-        
+    using UIntPtr_Misc = UIntPtr;
+    using IntPtr_Misc = IntPtr;
+
     using Math = Internal.System.Math;
 
     public static partial class DoubleArithmetic {
@@ -216,7 +218,7 @@ namespace UltimateOrb.Mathematics {
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong BigMul(ULong first, ULong second, out ULong highResult) {
             unchecked {
-                if (ULong_Misc.Size > UIntPtr.Size) {
+                if (ULong_Misc.Size > UIntPtr_Misc.Size) {
                     // 2013Oct04, 2013Dec24
                     var fl = (UInt)first;
                     var fh = (UInt)(first >> UInt_Misc.BitSizeAsIntUnchecked);
@@ -262,13 +264,13 @@ namespace UltimateOrb.Mathematics {
             highResult = unchecked((Long)r - (-(Long)((ULong)first >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & second) - (-(Long)((ULong)second >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & first));
             return q;
         }
-        
+
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         // primary overload
         public static ULong BigMul_A_Karatsuba(ULong first, ULong second, out ULong highResult) {
             unchecked {
-                if (ULong_Misc.Size > UIntPtr.Size) {
+                if (ULong_Misc.Size > UIntPtr_Misc.Size) {
                     // 2013Oct04
                     // 我很滿意。
                     var fl = (UInt)first;
@@ -317,7 +319,7 @@ namespace UltimateOrb.Mathematics {
         // primary overload
         public static ULong BigMul_A_Long(ULong first, ULong second, out ULong highResult) {
             unchecked {
-                if (ULong_Misc.Size > UIntPtr.Size) {
+                if (ULong_Misc.Size > UIntPtr_Misc.Size) {
                     // 2013Oct03
                     // 我很滿意。
                     var fl = (UInt)first;
@@ -454,7 +456,7 @@ namespace UltimateOrb.Mathematics {
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong BigSquare(ULong value, out ULong highResult) {
             unchecked {
-                if (ULong_Misc.Size > UIntPtr.Size) {
+                if (ULong_Misc.Size > UIntPtr_Misc.Size) {
                     // 2013Oct04
                     var fl = (UInt)value;
                     var fh = (UInt)(value >> UInt_Misc.BitSizeAsIntUnchecked);
@@ -488,7 +490,7 @@ namespace UltimateOrb.Mathematics {
                 }
             }
         }
-        
+
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         internal static ULong BigDivRemInternal(ULong lowDividend, ULong highDividend, ULong divisor, out ULong remainder) {
             unchecked {

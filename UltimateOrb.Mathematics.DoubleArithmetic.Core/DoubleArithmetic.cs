@@ -9,8 +9,6 @@ namespace UltimateOrb.Mathematics {
     using Int = Int32;
     using Long = Int64;
 
-    // using Math = global::Internal.System.Math;
-
     public static partial class DoubleArithmetic {
         /*
 #if DEBUG
@@ -22,7 +20,7 @@ namespace UltimateOrb.Mathematics {
             System.Diagnostics.Debug.Assert(Misc.BitSizeOf<UInt>() > 0);
         }
 #endif
-         */
+        */
     }
 
     namespace Internal.System {
@@ -171,6 +169,7 @@ namespace UltimateOrb.Mathematics {
         internal static partial class Int32 {
 
             public static uint Size {
+
                 [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
                 get {
                     return 4;
@@ -300,8 +299,8 @@ namespace UltimateOrb.Mathematics {
             }
 
             public static int BitSizeAsIntUnchecked {
-                [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 
+                [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
                 get {
                     return 64;
                 }
