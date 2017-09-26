@@ -19,7 +19,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int<#= Ti #>;
 	using Long = Int<#= Di #>;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int<#= T #>;
 	using UIntT = UInt<#= T #>;
@@ -64,7 +64,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int<#= Ti #>;
 	using Long = Int<#= Di #>;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int<#= T #>;
 	using UIntT = UInt<#= T #>;

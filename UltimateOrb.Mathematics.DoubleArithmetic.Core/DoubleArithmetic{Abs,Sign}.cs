@@ -12,7 +12,7 @@ namespace UltimateOrb.Mathematics {
     using Int_Misc = Internal.SizeOfModule.Int32;
     using Long_Misc = Internal.SizeOfModule.Int64;
 
-    using Math = Internal.System.Math;
+    using Math = UltimateOrb.Internal.System.Math;
     using MathEx = DoubleArithmetic;
 
     public static partial class DoubleArithmetic {

@@ -3,36 +3,17 @@
 [assembly: System.CLSCompliantAttribute(true)]
 [assembly: System.Security.SecurityTransparentAttribute()]
 
-namespace UltimateOrb.Mathematics {
-    using UInt = UInt32;
-    using ULong = UInt64;
-    using Int = Int32;
-    using Long = Int64;
-
-    public static partial class DoubleArithmetic {
-
-        /*
-#if DEBUG
-        static DoubleArithmetic() {
-            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<UInt>() == Misc.BitSizeOf<Int>());
-            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<ULong>() == Misc.BitSizeOf<Long>());
-            System.Diagnostics.Debug.Assert(checked(2u * Misc.BitSizeOf<UInt>()) == Misc.BitSizeOf<ULong>());
-            System.Diagnostics.Debug.Assert(~0 == -1);
-            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<UInt>() > 0);
-        }
-#endif
-        */
-    }
+namespace UltimateOrb {
 
     namespace Internal.System {
         using System = global::System;
 
-        using UInt32_Misc = Internal.SizeOfModule.UInt32;
-        using UInt64_Misc = Internal.SizeOfModule.UInt64;
-        using UIntPtr_Misc = Internal.SizeOfModule.UIntPtr;
-        using Int32_Misc = Internal.SizeOfModule.Int32;
-        using Int64_Misc = Internal.SizeOfModule.Int64;
-        using IntPtr_Misc = Internal.SizeOfModule.IntPtr;
+        using UInt32_Misc = Mathematics.Internal.SizeOfModule.UInt32;
+        using UInt64_Misc = Mathematics.Internal.SizeOfModule.UInt64;
+        using UIntPtr_Misc = Mathematics.Internal.SizeOfModule.UIntPtr;
+        using Int32_Misc = Mathematics.Internal.SizeOfModule.Int32;
+        using Int64_Misc = Mathematics.Internal.SizeOfModule.Int64;
+        using IntPtr_Misc = Mathematics.Internal.SizeOfModule.IntPtr;
 
         public static partial class Math {
 
@@ -69,6 +50,28 @@ namespace UltimateOrb.Mathematics {
                 return -1 == divisor ? 0 : dividend % divisor;
             }
         }
+    }
+}
+
+namespace UltimateOrb.Mathematics {
+    using UInt = UInt32;
+    using ULong = UInt64;
+    using Int = Int32;
+    using Long = Int64;
+
+    public static partial class DoubleArithmetic {
+
+        /*
+#if DEBUG
+        static DoubleArithmetic() {
+            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<UInt>() == Misc.BitSizeOf<Int>());
+            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<ULong>() == Misc.BitSizeOf<Long>());
+            System.Diagnostics.Debug.Assert(checked(2u * Misc.BitSizeOf<UInt>()) == Misc.BitSizeOf<ULong>());
+            System.Diagnostics.Debug.Assert(~0 == -1);
+            System.Diagnostics.Debug.Assert(Misc.BitSizeOf<UInt>() > 0);
+        }
+#endif
+        */
     }
 
     namespace Elementary {

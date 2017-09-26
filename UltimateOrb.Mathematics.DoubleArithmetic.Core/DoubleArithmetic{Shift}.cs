@@ -6,7 +6,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int32;
 	using Long = Int64;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int64;
 	using UIntT = UInt64;
@@ -45,7 +45,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int32;
 	using Long = Int64;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int64;
 	using UIntT = UInt64;
@@ -221,7 +221,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int32;
 	using Long = Int64;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int64;
 	using UIntT = UInt64;
@@ -397,7 +397,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int32;
 	using Long = Int64;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int64;
 	using UIntT = UInt64;
@@ -573,7 +573,7 @@ namespace UltimateOrb.Mathematics {
 	using Int = Int32;
 	using Long = Int64;
 
-	using Math = Internal.System.Math;
+	using Math = UltimateOrb.Internal.System.Math;
 
 	using IntT = Int64;
 	using UIntT = UInt64;

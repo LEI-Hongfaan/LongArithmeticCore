@@ -14,7 +14,7 @@ namespace UltimateOrb.Mathematics {
     using UIntPtr_Misc = Internal.SizeOfModule.UIntPtr;
     using IntPtr_Misc = Internal.SizeOfModule.IntPtr;
 
-    using Math = Internal.System.Math;
+    using Math = UltimateOrb.Internal.System.Math;
 
     public static partial class DoubleArithmetic {
 
