@@ -125,29 +125,19 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = checked(-unchecked((IntT)value_hi));
-			if (unchecked((UIntT)result_lo_) > 0) {
-				result_hi_ = checked(result_hi_ - 1);
-			}
-			result_hi = unchecked((HIntT)result_hi_);
-			return result_lo_;
-			/*
-			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)checked(-1 - unchecked((IntT)value_hi))));
+			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)(-1 - (IntT)value_hi)));
 			result_hi = result_hi_;
 			return result_lo_;
-			*/
 		}
 
 		[System.CLSCompliantAttribute(<#= C #>)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			if (0 != unchecked((IntT)value_lo)) {
-				var u = checked(-unchecked((IntT)value_lo));
+				var u = checked(0 - unchecked((UIntT)value_lo));
 				throw (OverflowException)null;
-
 			} else if (0 != unchecked((IntT)value_hi)) {
-				var u = checked(-unchecked((IntT)value_hi));
+				var u = checked(0 - unchecked((UIntT)value_hi));
 				throw (OverflowException)null;
 			}
 			result_hi = 0;
