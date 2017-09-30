@@ -110,29 +110,19 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = checked(-unchecked((IntT)value_hi));
-			if (unchecked((UIntT)result_lo_) > 0) {
-				result_hi_ = checked(result_hi_ - 1);
-			}
-			result_hi = unchecked((HIntT)result_hi_);
-			return result_lo_;
-			/*
-			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)checked(-1 - unchecked((IntT)value_hi))));
+			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)(-1 - (IntT)value_hi)));
 			result_hi = result_hi_;
 			return result_lo_;
-			*/
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			if (0 != unchecked((IntT)value_lo)) {
-				var u = checked(-unchecked((IntT)value_lo));
+				var u = checked(0 - unchecked((UIntT)value_lo));
 				throw (OverflowException)null;
-
 			} else if (0 != unchecked((IntT)value_hi)) {
-				var u = checked(-unchecked((IntT)value_hi));
+				var u = checked(0 - unchecked((UIntT)value_hi));
 				throw (OverflowException)null;
 			}
 			result_hi = 0;
@@ -142,7 +132,7 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
-		public static LIntT MultiplyUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			UIntT result_hi_;
 			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
 			result_hi = unchecked((HIntT)unchecked(result_hi_ + (UIntT)first_lo * (UIntT)second_hi + (UIntT)first_hi * (UIntT)second_lo));
@@ -151,8 +141,20 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+			UIntT result_hi_;
+			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
+				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
+				throw (OverflowException)null;
+			}
+			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
+			return unchecked((LIntT)result_lo_);
+		}
 
+		[System.CLSCompliantAttribute(false)]
+		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
 			if (0 > unchecked((IntT)first_hi)) {
 				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
@@ -186,15 +188,24 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
-			UIntT result_hi_;
-			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
-				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
-				throw (OverflowException)null;
+		public static LIntT MultiplySignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		    var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
+			if (0 > unchecked((IntT)first_hi)) {
+				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
 			}
-			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
-			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
-			return unchecked((LIntT)result_lo_);
+			if (0 > unchecked((IntT)second_hi)) {
+				second_lo = NegateUnchecked(second_lo, second_hi, out second_hi);
+			}
+			{
+				UIntT result_hi_;
+				var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+				result_hi_ = unchecked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo));
+				if (s) {
+					result_lo_ = NegateUnchecked(result_lo_, result_hi_, out result_hi_);
+				}
+				result_hi = unchecked((HIntT)result_hi_);
+				return unchecked((LIntT)result_lo_);
+			}
 		}
 	}
 }
@@ -309,29 +320,19 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = checked(-unchecked((IntT)value_hi));
-			if (unchecked((UIntT)result_lo_) > 0) {
-				result_hi_ = checked(result_hi_ - 1);
-			}
-			result_hi = unchecked((HIntT)result_hi_);
-			return result_lo_;
-			/*
-			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)checked(-1 - unchecked((IntT)value_hi))));
+			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)(-1 - (IntT)value_hi)));
 			result_hi = result_hi_;
 			return result_lo_;
-			*/
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			if (0 != unchecked((IntT)value_lo)) {
-				var u = checked(-unchecked((IntT)value_lo));
+				var u = checked(0 - unchecked((UIntT)value_lo));
 				throw (OverflowException)null;
-
 			} else if (0 != unchecked((IntT)value_hi)) {
-				var u = checked(-unchecked((IntT)value_hi));
+				var u = checked(0 - unchecked((UIntT)value_hi));
 				throw (OverflowException)null;
 			}
 			result_hi = 0;
@@ -341,7 +342,7 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
-		public static LIntT MultiplyUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			UIntT result_hi_;
 			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
 			result_hi = unchecked((HIntT)unchecked(result_hi_ + (UIntT)first_lo * (UIntT)second_hi + (UIntT)first_hi * (UIntT)second_lo));
@@ -350,8 +351,20 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+			UIntT result_hi_;
+			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
+				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
+				throw (OverflowException)null;
+			}
+			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
+			return unchecked((LIntT)result_lo_);
+		}
 
+		[System.CLSCompliantAttribute(false)]
+		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
 			if (0 > unchecked((IntT)first_hi)) {
 				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
@@ -385,15 +398,24 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
-			UIntT result_hi_;
-			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
-				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
-				throw (OverflowException)null;
+		public static LIntT MultiplySignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		    var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
+			if (0 > unchecked((IntT)first_hi)) {
+				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
 			}
-			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
-			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
-			return unchecked((LIntT)result_lo_);
+			if (0 > unchecked((IntT)second_hi)) {
+				second_lo = NegateUnchecked(second_lo, second_hi, out second_hi);
+			}
+			{
+				UIntT result_hi_;
+				var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+				result_hi_ = unchecked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo));
+				if (s) {
+					result_lo_ = NegateUnchecked(result_lo_, result_hi_, out result_hi_);
+				}
+				result_hi = unchecked((HIntT)result_hi_);
+				return unchecked((LIntT)result_lo_);
+			}
 		}
 	}
 }
@@ -508,29 +530,19 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = checked(-unchecked((IntT)value_hi));
-			if (unchecked((UIntT)result_lo_) > 0) {
-				result_hi_ = checked(result_hi_ - 1);
-			}
-			result_hi = unchecked((HIntT)result_hi_);
-			return result_lo_;
-			/*
-			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)checked(-1 - unchecked((IntT)value_hi))));
+			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)(-1 - (IntT)value_hi)));
 			result_hi = result_hi_;
 			return result_lo_;
-			*/
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			if (0 != unchecked((IntT)value_lo)) {
-				var u = checked(-unchecked((IntT)value_lo));
+				var u = checked(0 - unchecked((UIntT)value_lo));
 				throw (OverflowException)null;
-
 			} else if (0 != unchecked((IntT)value_hi)) {
-				var u = checked(-unchecked((IntT)value_hi));
+				var u = checked(0 - unchecked((UIntT)value_hi));
 				throw (OverflowException)null;
 			}
 			result_hi = 0;
@@ -540,7 +552,7 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
-		public static LIntT MultiplyUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			UIntT result_hi_;
 			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
 			result_hi = unchecked((HIntT)unchecked(result_hi_ + (UIntT)first_lo * (UIntT)second_hi + (UIntT)first_hi * (UIntT)second_lo));
@@ -549,8 +561,20 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+			UIntT result_hi_;
+			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
+				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
+				throw (OverflowException)null;
+			}
+			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
+			return unchecked((LIntT)result_lo_);
+		}
 
+		[System.CLSCompliantAttribute(false)]
+		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
 			if (0 > unchecked((IntT)first_hi)) {
 				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
@@ -584,15 +608,24 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
-			UIntT result_hi_;
-			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
-				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
-				throw (OverflowException)null;
+		public static LIntT MultiplySignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		    var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
+			if (0 > unchecked((IntT)first_hi)) {
+				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
 			}
-			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
-			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
-			return unchecked((LIntT)result_lo_);
+			if (0 > unchecked((IntT)second_hi)) {
+				second_lo = NegateUnchecked(second_lo, second_hi, out second_hi);
+			}
+			{
+				UIntT result_hi_;
+				var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+				result_hi_ = unchecked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo));
+				if (s) {
+					result_lo_ = NegateUnchecked(result_lo_, result_hi_, out result_hi_);
+				}
+				result_hi = unchecked((HIntT)result_hi_);
+				return unchecked((LIntT)result_lo_);
+			}
 		}
 	}
 }
@@ -707,29 +740,19 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = checked(-unchecked((IntT)value_hi));
-			if (unchecked((UIntT)result_lo_) > 0) {
-				result_hi_ = checked(result_hi_ - 1);
-			}
-			result_hi = unchecked((HIntT)result_hi_);
-			return result_lo_;
-			/*
-			var result_lo_ = unchecked((LIntT)(-(IntT)value_lo));
-			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)checked(-1 - unchecked((IntT)value_hi))));
+			var result_hi_ = (((LIntT)0 == value_lo) ? unchecked((HIntT)checked(-unchecked((IntT)value_hi))) : unchecked((HIntT)(-1 - (IntT)value_hi)));
 			result_hi = result_hi_;
 			return result_lo_;
-			*/
 		}
 
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
 			if (0 != unchecked((IntT)value_lo)) {
-				var u = checked(-unchecked((IntT)value_lo));
+				var u = checked(0 - unchecked((UIntT)value_lo));
 				throw (OverflowException)null;
-
 			} else if (0 != unchecked((IntT)value_hi)) {
-				var u = checked(-unchecked((IntT)value_hi));
+				var u = checked(0 - unchecked((UIntT)value_hi));
 				throw (OverflowException)null;
 			}
 			result_hi = 0;
@@ -739,7 +762,7 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
-		public static LIntT MultiplyUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			UIntT result_hi_;
 			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
 			result_hi = unchecked((HIntT)unchecked(result_hi_ + (UIntT)first_lo * (UIntT)second_hi + (UIntT)first_hi * (UIntT)second_lo));
@@ -748,8 +771,20 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+			UIntT result_hi_;
+			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
+				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
+				throw (OverflowException)null;
+			}
+			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
+			return unchecked((LIntT)result_lo_);
+		}
 
+		[System.CLSCompliantAttribute(true)]
+		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+		public static LIntT MultiplySigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
 			if (0 > unchecked((IntT)first_hi)) {
 				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
@@ -783,15 +818,24 @@ namespace UltimateOrb.Mathematics {
 
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-		public static LIntT MultiplyUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
-			UIntT result_hi_;
-			if (first_hi != (HIntT)0u && second_hi != (HIntT)0u) {
-				result_hi_ = checked(0u - unchecked((UIntT)first_hi));
-				throw (OverflowException)null;
+		public static LIntT MultiplySignedUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
+		    var s = (0 > unchecked((IntT)(first_hi ^ second_hi)));
+			if (0 > unchecked((IntT)first_hi)) {
+				first_lo = NegateUnchecked(first_lo, first_hi, out first_hi);
 			}
-			var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
-			result_hi = unchecked((HIntT)checked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo)));
-			return unchecked((LIntT)result_lo_);
+			if (0 > unchecked((IntT)second_hi)) {
+				second_lo = NegateUnchecked(second_lo, second_hi, out second_hi);
+			}
+			{
+				UIntT result_hi_;
+				var result_lo_ = BigMul(unchecked((UIntT)first_lo), unchecked((UIntT)second_lo), out result_hi_);
+				result_hi_ = unchecked(result_hi_ + unchecked((UIntT)first_lo) * unchecked((UIntT)second_hi) + unchecked((UIntT)first_hi) * unchecked((UIntT)second_lo));
+				if (s) {
+					result_lo_ = NegateUnchecked(result_lo_, result_hi_, out result_hi_);
+				}
+				result_hi = unchecked((HIntT)result_hi_);
+				return unchecked((LIntT)result_lo_);
+			}
 		}
 	}
 }
