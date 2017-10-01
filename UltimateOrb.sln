@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateOrb.Mathematics.DoubleArithmetic.Core", "UltimateOrb.Mathematics.DoubleArithmetic.Core\UltimateOrb.Mathematics.DoubleArithmetic.Core.csproj", "{8F835E79-D03A-480F-A51A-E6BC13CCB961}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateOrb.Mathematics.DoubleArithmetic.Core", "UltimateOrb.Mathematics.DoubleArithmetic.Core\UltimateOrb.Mathematics.DoubleArithmetic.Core.csproj", "{8F835E79-D03A-480F-A51A-E6BC13CCB961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateOrb.Mathematics.DoubleArithmetics.Testing", "UltimateOrb.Mathematics.DoubleArithmetics.Testing\UltimateOrb.Mathematics.DoubleArithmetics.Testing.csproj", "{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8F835E79-D03A-480F-A51A-E6BC13CCB961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F835E79-D03A-480F-A51A-E6BC13CCB961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F835E79-D03A-480F-A51A-E6BC13CCB961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

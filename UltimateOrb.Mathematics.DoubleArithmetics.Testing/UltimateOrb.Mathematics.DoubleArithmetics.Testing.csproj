@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ApplicationIcon />
+    <StartupObject />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>Unit tests for UltimateOrb.Mathematics.DoubleArithmetic.* .</Description>
+    <Authors>LEI Hongfaan</Authors>
+    <Company>LEI Hongfaan</Company>
+    <Product>UltimateOrb Libraries</Product>
+    <Copyright>Copyright © 2017 LEI Hongfaan. Distributed under the MIT License.</Copyright>
+    <PackageLicenseUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core</PackageProjectUrl>
+    <RepositoryType></RepositoryType>
+    <RepositoryUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core.git</RepositoryUrl>
+    <PackageReleaseNotes>Experimental.
+</PackageReleaseNotes>
+    <AssemblyVersion>1.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170923-02" />
+    <PackageReference Include="UltimateOrb.Mathematics.DoubleArithmetic.Core" Version="1.2.2" />
+    <PackageReference Include="xunit" Version="2.3.0-beta5-build3769" />
+    <PackageReference Include="xunit.runner.console" Version="2.3.0-beta5-build3769" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta5-build3769" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Typed.Core">
+      <HintPath>M:\Users\YXY\OneDrive\L\Projects\UltimateOrb\Typed.Core\bin\Release\Typed.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ArithmeticOperations.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ArithmeticOperations.cs</LastGenOutput>
+    </None>
+    <None Update="Program{Core}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Program{Core}.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="ArithmeticOperations.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ArithmeticOperations.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Program{Core}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Program{Core}.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

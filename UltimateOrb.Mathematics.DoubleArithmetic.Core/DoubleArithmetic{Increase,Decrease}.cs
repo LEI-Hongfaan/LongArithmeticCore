@@ -19,7 +19,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? unchecked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -29,7 +32,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -39,7 +45,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -50,7 +59,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? unchecked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -60,7 +72,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -70,7 +85,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -98,7 +116,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? unchecked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -108,7 +129,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -118,7 +142,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -129,7 +156,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? unchecked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -139,7 +169,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -149,7 +182,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -177,7 +213,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? unchecked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -187,7 +226,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -197,7 +239,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -208,7 +253,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? unchecked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -218,7 +266,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -228,7 +279,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -256,7 +310,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? unchecked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -266,7 +323,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -276,7 +336,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT IncreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(++value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				++result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = (~(LIntT)0 == value_lo ? checked(++result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -287,7 +350,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((HIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? unchecked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -297,7 +363,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseSigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((IntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);
@@ -307,7 +376,10 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnsigned(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
-			var result_lo_ = unchecked(--value_lo);
+			var result_lo_ = value_lo;
+			unchecked {
+				--result_lo_;
+			}
 			var result_hi_ = unchecked((UIntT)value_hi);
 			result_hi_ = ((LIntT)0 == value_lo ? checked(--result_hi_) : result_hi_);
 			result_hi = unchecked((HIntT)result_hi_);

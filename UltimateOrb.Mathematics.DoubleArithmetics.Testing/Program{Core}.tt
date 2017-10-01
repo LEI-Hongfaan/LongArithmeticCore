@@ -1,0 +1,78 @@
+﻿<#@ assembly name="System.Core.dll" #>
+<#@ import namespace="System.Linq" #>
+<#
+var qnBigInteger = "System.Numerics.BigInteger";
+#>
+using System;
+using System.Linq;
+using System.Text;
+
+namespace XUnit__xUnit_net__T01 {
+<#
+var oc_uo_r_s = new string[] {
+    @"((x) => -x)",
+	@"((x) => ++x)",
+	@"((x) => --x)",
+};
+var oc_m_s = new string[] {
+    @"Unchecked",
+	@"Signed",
+	@"Unsigned",
+};
+var oc_m1_s = new string[] {
+    @"I2_MapsTo_I2Unchecked",
+	@"I2_MapsTo_I2Checked",
+	@"U2_MapsTo_U2Checked",
+};
+var oc_uo_t_s_s = new string[][] {
+    (from x in oc_m_s select $@"DoubleArithmetic.Negate{x}").ToArray(),
+	(from x in oc_m_s select $@"DoubleArithmetic.Increase{x}").ToArray(),
+	(from x in oc_m_s select $@"DoubleArithmetic.Decrease{x}").ToArray(),
+};
+var oc_uo_m2_s = new string[] {
+    @"I_I_MapsTo_I_I",
+	@"U_I_MapsTo_U_I",
+	@"I_U_MapsTo_I_U",
+	@"U_U_MapsTo_U_U",
+};
+#>
+    using Xunit;
+    using BigInteger = <#= qnBigInteger #>;
+    using TestModule = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations.TestModule;
+    using ArithmeticOperations = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations;
+    using DoubleArithmetic = UltimateOrb.Mathematics.DoubleArithmetic;
+
+    public partial class Program {
+<#
+for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
+    var oc_uo_r = oc_uo_r_s[i];
+	var oc_uo_t_s = oc_uo_t_s_s[i];
+	for (var j = 0; oc_m_s.Length > j ; ++j) {
+	    var oc_uo_t = oc_uo_t_s[j];
+	    var oc_m = oc_m_s[j];
+	    var oc_uo_m1 = oc_m1_s[j];
+	    for (var k = 0; oc_uo_m2_s.Length > k ; ++k) {
+	        var oc_uo_m2 = oc_uo_m2_s[k];
+#>
+        
+        [Fact]
+        public void Test_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)<#= oc_uo_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_uo_m1 #>_WithSignature_<#= oc_uo_m2 #>)<#= oc_uo_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_uo_m1 #>_WithSignature_<#= oc_uo_m2 #>),
+                    nameof(<#= oc_uo_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+    }
+}
