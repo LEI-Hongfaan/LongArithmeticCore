@@ -55,7 +55,6 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -151,7 +150,6 @@ namespace UltimateOrb.Mathematics {
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
 		}
-
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
@@ -249,7 +247,6 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -345,7 +342,6 @@ namespace UltimateOrb.Mathematics {
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
 		}
-
 
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]

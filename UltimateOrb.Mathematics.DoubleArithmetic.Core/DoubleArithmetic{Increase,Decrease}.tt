@@ -70,7 +70,6 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-
 		[System.CLSCompliantAttribute(<#= C #>)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT DecreaseUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {

@@ -33,11 +33,11 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <TransformOutOfDateOnly>false</TransformOutOfDateOnly>
-  </PropertyGroup>
-
   <ItemGroup>
+    <None Update="DoubleArithmetic{Compare}.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DoubleArithmetic{Compare}.cs</LastGenOutput>
+    </None>
     <None Update="DoubleArithmetic{Shift}.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DoubleArithmetic{Shift}.cs</LastGenOutput>
@@ -50,10 +50,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DoubleArithmetic{Core}.cs</LastGenOutput>
     </None>
-    <None Update="DoubleArithmetic{Compare}.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DoubleArithmetic{Compare}.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   
   <!--
@@ -65,27 +61,27 @@
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <Compile Update="DoubleArithmetic{Shift}.cs">
+    <Compile Update="DoubleArithmetic{Compare}.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DoubleArithmetic{Shift}.tt</DependentUpon>
-    </Compile>
-    <Compile Update="DoubleArithmetic{Increase,Decrease}.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DoubleArithmetic{Increase,Decrease}.tt</DependentUpon>
+      <DependentUpon>DoubleArithmetic{Compare}.tt</DependentUpon>
     </Compile>
     <Compile Update="DoubleArithmetic{Core}.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>DoubleArithmetic{Core}.tt</DependentUpon>
     </Compile>
-    <Compile Update="DoubleArithmetic{Compare}.cs">
+    <Compile Update="DoubleArithmetic{Increase,Decrease}.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DoubleArithmetic{Compare}.tt</DependentUpon>
+      <DependentUpon>DoubleArithmetic{Increase,Decrease}.tt</DependentUpon>
+    </Compile>
+    <Compile Update="DoubleArithmetic{Shift}.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DoubleArithmetic{Shift}.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
