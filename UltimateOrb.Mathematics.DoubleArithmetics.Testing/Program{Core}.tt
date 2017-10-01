@@ -9,15 +9,15 @@ using System.Text;
 
 namespace XUnit__xUnit_net__T01 {
 <#
-var oc_uo_r_s = new string[] {
-    @"((x) => -x)",
-	@"((x) => ++x)",
-	@"((x) => --x)",
-};
 var oc_m_s = new string[] {
     @"Unchecked",
 	@"Signed",
 	@"Unsigned",
+};
+var oc_uo_r_s = new string[] {
+    @"((x) => -x)",
+	@"((x) => ++x)",
+	@"((x) => --x)",
 };
 var oc_m1_s = new string[] {
     @"I2_MapsTo_I2Unchecked",
@@ -56,7 +56,7 @@ for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
 #>
         
         [Fact]
-        public void Test_<#= i #>_<#= j #>_<#= k #>() {
+        public void Test_0_<#= i #>_<#= j #>_<#= k #>() {
             var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)<#= oc_uo_r #>;
             var testImpl = (ArithmeticOperations.Operation_<#= oc_uo_m1 #>_WithSignature_<#= oc_uo_m2 #>)<#= oc_uo_t #>;
             var b = TestModule.TestOperation(referenceImpl, testImpl);
@@ -66,6 +66,60 @@ for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
                     "!!! {1}\r\n\t{0}",
                     nameof(ArithmeticOperations.Operation_<#= oc_uo_m1 #>_WithSignature_<#= oc_uo_m2 #>),
                     nameof(<#= oc_uo_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+<#
+var oc_bo_r_s = new string[] {
+    @"((x, y) => x + y)",
+	@"((x, y) => x - y)",
+	@"((x, y) => x * y)",
+};
+var oc_m2_s = new string[] {
+    @"I2_I2_MapsTo_I2Unchecked",
+	@"I2_I2_MapsTo_I2Checked",
+	@"U2_U2_MapsTo_U2Checked",
+};
+var oc_bo_t_s_s = new string[][] {
+    (from x in oc_m_s select $@"DoubleArithmetic.Add{x}").ToArray(),
+	(from x in oc_m_s select $@"DoubleArithmetic.Subtract{x}").ToArray(),
+	(from x in oc_m_s select $@"DoubleArithmetic.Multiply{x}").ToArray(),
+};
+var oc_bo_m2_s = new string[] {
+    @"I_I_I_I_MapsTo_I_I",
+	@"U_I_U_I_MapsTo_U_I",
+	@"I_U_I_U_MapsTo_I_U",
+	@"U_U_U_U_MapsTo_U_U",
+};
+#>
+<#
+for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
+    var oc_bo_r = oc_bo_r_s[i];
+	var oc_bo_t_s = oc_bo_t_s_s[i];
+	for (var j = 0; oc_m_s.Length > j ; ++j) {
+	    var oc_bo_t = oc_bo_t_s[j];
+	    var oc_m = oc_m_s[j];
+	    var oc_bo_m1 = oc_m2_s[j];
+	    for (var k = 0; oc_bo_m2_s.Length > k ; ++k) {
+	        var oc_bo_m2 = oc_bo_m2_s[k];
+#>
+        
+        [Fact]
+        public void Test_1_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_IX_MapsTo_IX)<#= oc_bo_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_bo_m1 #>_WithSignature_<#= oc_bo_m2 #>)<#= oc_bo_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_bo_m1 #>_WithSignature_<#= oc_bo_m2 #>),
+                    nameof(<#= oc_bo_t #>)));
 				Assert.True(false, sb.ToString());
             }
         }

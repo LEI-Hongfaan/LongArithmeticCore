@@ -77,9 +77,20 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked(first_lo - second_lo);
-			var result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
+			IntT result_hi_;
 			if (unchecked((UIntT)result_lo_) > unchecked((UIntT)first_lo)) {
-				result_hi_ = checked(result_hi_ - 1);
+				result_hi_ = unchecked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi) - 1);
+				if (unchecked((IntT)first_hi) <= 0) {
+					if (0 <= unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)(~result_hi_));
+					}
+				} else {
+					if (0 > unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)result_hi_);
+					}
+				}
+			} else {
+				result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
 			}
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
@@ -265,9 +276,20 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked(first_lo - second_lo);
-			var result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
+			IntT result_hi_;
 			if (unchecked((UIntT)result_lo_) > unchecked((UIntT)first_lo)) {
-				result_hi_ = checked(result_hi_ - 1);
+				result_hi_ = unchecked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi) - 1);
+				if (unchecked((IntT)first_hi) <= 0) {
+					if (0 <= unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)(~result_hi_));
+					}
+				} else {
+					if (0 > unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)result_hi_);
+					}
+				}
+			} else {
+				result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
 			}
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
@@ -453,9 +475,20 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked(first_lo - second_lo);
-			var result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
+			IntT result_hi_;
 			if (unchecked((UIntT)result_lo_) > unchecked((UIntT)first_lo)) {
-				result_hi_ = checked(result_hi_ - 1);
+				result_hi_ = unchecked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi) - 1);
+				if (unchecked((IntT)first_hi) <= 0) {
+					if (0 <= unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)(~result_hi_));
+					}
+				} else {
+					if (0 > unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)result_hi_);
+					}
+				}
+			} else {
+				result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
 			}
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
@@ -641,9 +674,20 @@ namespace UltimateOrb.Mathematics {
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
 			var result_lo_ = unchecked(first_lo - second_lo);
-			var result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
+			IntT result_hi_;
 			if (unchecked((UIntT)result_lo_) > unchecked((UIntT)first_lo)) {
-				result_hi_ = checked(result_hi_ - 1);
+				result_hi_ = unchecked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi) - 1);
+				if (unchecked((IntT)first_hi) <= 0) {
+					if (0 <= unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)(~result_hi_));
+					}
+				} else {
+					if (0 > unchecked((IntT)second_hi)) {
+						var ignored = checked((UIntT)result_hi_);
+					}
+				}
+			} else {
+				result_hi_ = checked(unchecked((IntT)first_hi) - unchecked((IntT)second_hi));
 			}
 			result_hi = unchecked((HIntT)result_hi_);
 			return result_lo_;
