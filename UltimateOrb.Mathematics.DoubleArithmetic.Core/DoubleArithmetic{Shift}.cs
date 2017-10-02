@@ -131,9 +131,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -204,9 +204,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -307,9 +307,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -380,9 +380,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -483,9 +483,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -556,9 +556,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -659,9 +659,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
@@ -732,9 +732,9 @@ namespace UltimateOrb.Mathematics {
 				} else {
 					highResult = (HIntT)0;
 					if (count > 64) {
-						return (LIntT)((UIntT)low >> (count - 64));
+						return (LIntT)((UIntT)high >> (count - 64));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
