@@ -836,7 +836,12 @@ for (var i = 0; i < 4; ++i) {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_<#= L1 #>_<#= H1 #>_int_MapsTo_<#= L1 #>_<#= H1 #> testImpl, <#= L #>IntT first_lo, <#= H #>IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */<#= checked(2 * T) #>/**/);
+			var second_ = second & (/*= checked(2 * T) */<#= checked(2 * T) #>/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */UInt<#= checked(2 * T) #>_MinValue > r_result || r_result > /*= checked(2 * T) */UInt<#= checked(2 * T) #>_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -877,7 +882,12 @@ for (var i = 0; i < 4; ++i) {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_<#= L1 #>_<#= H1 #>_int_MapsTo_<#= L1 #>_<#= H1 #> testImpl, <#= L #>IntT first_lo, <#= H #>IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */<#= checked(2 * T) #>/**/);
+			var second_ = second & (/*= checked(2 * T) */<#= checked(2 * T) #>/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */Int<#= checked(2 * T) #>_MinValue > r_result || r_result > /*= checked(2 * T) */Int<#= checked(2 * T) #>_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -918,7 +928,12 @@ for (var i = 0; i < 4; ++i) {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_<#= L1 #>_<#= H1 #>_int_MapsTo_<#= L1 #>_<#= H1 #> testImpl, <#= L #>IntT first_lo, <#= H #>IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */<#= checked(2 * T) #>/**/);
+			var second_ = second & (/*= checked(2 * T) */<#= checked(2 * T) #>/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			<#= L #>IntT t_result_lo;
 			<#= H #>IntT t_result_hi;
             try {
@@ -955,7 +970,12 @@ for (var i = 0; i < 4; ++i) {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_<#= L1 #>_<#= H1 #>_int_MapsTo_<#= L1 #>_<#= H1 #> testImpl, <#= L #>IntT first_lo, <#= H #>IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */<#= checked(2 * T) #>/**/);
+			var second_ = second & (/*= checked(2 * T) */<#= checked(2 * T) #>/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			<#= L #>IntT t_result_lo;
 			<#= H #>IntT t_result_hi;
             try {

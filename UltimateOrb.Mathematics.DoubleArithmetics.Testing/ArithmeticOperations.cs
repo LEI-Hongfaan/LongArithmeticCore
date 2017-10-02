@@ -1777,7 +1777,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -1818,7 +1823,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -1859,7 +1869,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			IntT t_result_lo;
 			IntT t_result_hi;
             try {
@@ -1896,7 +1911,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			IntT t_result_lo;
 			IntT t_result_hi;
             try {
@@ -1933,7 +1953,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -1974,7 +1999,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -2015,7 +2045,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			UIntT t_result_lo;
 			IntT t_result_hi;
             try {
@@ -2052,7 +2087,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			UIntT t_result_lo;
 			IntT t_result_hi;
             try {
@@ -2089,7 +2129,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -2130,7 +2175,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -2171,7 +2221,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			IntT t_result_lo;
 			UIntT t_result_hi;
             try {
@@ -2208,7 +2263,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			IntT t_result_lo;
 			UIntT t_result_hi;
             try {
@@ -2245,7 +2305,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -2286,7 +2351,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
             bool r_ov = false;
-			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
                 r_ov = true;
 				r_result = default(BigInteger);
@@ -2327,7 +2397,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			UIntT t_result_lo;
 			UIntT t_result_hi;
             try {
@@ -2364,7 +2439,12 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
         
         public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
             var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
-            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			var second_ = second & (/*= checked(2 * T) */128/**/ - 1);
+			var r_result = r_first;
+			for (; second_ > 17; second_ -= 17) {
+			    r_result = referenceImpl(r_result, 17);
+			}
+			r_result = referenceImpl(r_result, second_);
 			UIntT t_result_lo;
 			UIntT t_result_hi;
             try {

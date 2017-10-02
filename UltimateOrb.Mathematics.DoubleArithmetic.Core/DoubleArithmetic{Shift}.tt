@@ -155,9 +155,9 @@ for (var j = 0; j < CP.Length; ++j) {
 				} else {
 					highResult = (HIntT)0;
 					if (count > <#= T #>) {
-						return (LIntT)((UIntT)low >> (count - <#= T #>));
+						return (LIntT)((UIntT)high >> (count - <#= T #>));
 					} else {
-						return (LIntT)low;
+						return (LIntT)high;
 					}
 				}
 			}
