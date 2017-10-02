@@ -485,8 +485,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -525,9 +523,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -637,8 +633,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -677,9 +671,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -789,8 +781,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -829,9 +819,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -941,8 +929,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -981,9 +967,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(value_lo, value_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1098,8 +1082,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1145,9 +1127,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1174,7 +1154,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi);
+    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi)
     public delegate IntT Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi);
     
 	public static partial class TestModule {
@@ -1216,7 +1196,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi);
+    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi)
     public delegate IntT Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi);
 
     public static partial class TestModule {
@@ -1278,8 +1258,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1325,9 +1303,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1354,7 +1330,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi);
+    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi)
     public delegate UIntT Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi);
     
 	public static partial class TestModule {
@@ -1396,7 +1372,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi);
+    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi)
     public delegate UIntT Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi);
 
     public static partial class TestModule {
@@ -1458,8 +1434,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1505,9 +1479,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1534,7 +1506,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi);
+    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi)
     public delegate IntT Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi);
     
 	public static partial class TestModule {
@@ -1576,7 +1548,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi);
+    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi)
     public delegate IntT Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi);
 
     public static partial class TestModule {
@@ -1638,8 +1610,6 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
                 t_ov = true;
-				t_result_lo = 0;
-			    t_result_hi = 0;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1685,9 +1655,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
             try {
                 t_result_lo = testImpl(first_lo, first_hi, second_lo, second_hi, out t_result_hi);
             } catch(OverflowException) {
-                t_ov = true;				
-				t_result_lo = 0;
-			    t_result_hi = 0;
+                t_ov = true;
             } catch {
 			    // Unexcepted situations.
 				return false;
@@ -1714,7 +1682,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi);
+    // usually same as Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi)
     public delegate UIntT Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi);
     
 	public static partial class TestModule {
@@ -1756,7 +1724,7 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 		}
     }
 
-    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi);
+    // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi)
     public delegate UIntT Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi);
 
     public static partial class TestModule {
@@ -1791,6 +1759,634 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 					            return false;
 					        }
 						}
+					}
+			    }
+			}
+			return true;
+		}
+    }
+#endregion
+
+#region Binary Operations Shift
+    public delegate BigInteger Operation_IX_int_MapsTo_IX(BigInteger first, int second);
+
+    public delegate IntT Operation_U2_int_MapsTo_U2Checked_WithSignature_I_I_int_MapsTo_I_I(IntT first_lo, IntT first_hi, int second, out IntT result_hi);
+    
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			IntT t_result_lo = 0;
+			IntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerUnsigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate IntT Operation_I2_int_MapsTo_I2Checked_WithSignature_I_I_int_MapsTo_I_I(IntT first_lo, IntT first_hi, int second, out IntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			IntT t_result_lo = 0;
+			IntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerSigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_I_int_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I
+    public delegate IntT Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I(IntT first_lo, IntT first_hi, int second, out IntT result_hi);
+    
+	public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			IntT t_result_lo;
+			IntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			IntT r_result_lo = unchecked((IntT)(UIntT)(UIntT.MaxValue & r_result));
+			IntT r_result_hi = unchecked((IntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I
+    public delegate IntT Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I(IntT first_lo, IntT first_hi, int second, out IntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl, IntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			IntT t_result_lo;
+			IntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			IntT r_result_lo = unchecked((IntT)(UIntT)(UIntT.MaxValue & r_result));
+			IntT r_result_hi = unchecked((IntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate UIntT Operation_U2_int_MapsTo_U2Checked_WithSignature_U_I_int_MapsTo_U_I(UIntT first_lo, IntT first_hi, int second, out IntT result_hi);
+    
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			UIntT t_result_lo = 0;
+			IntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerUnsigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate UIntT Operation_I2_int_MapsTo_I2Checked_WithSignature_U_I_int_MapsTo_U_I(UIntT first_lo, IntT first_hi, int second, out IntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			UIntT t_result_lo = 0;
+			IntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerSigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_I_int_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I
+    public delegate UIntT Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I(UIntT first_lo, IntT first_hi, int second, out IntT result_hi);
+    
+	public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			UIntT t_result_lo;
+			IntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			UIntT r_result_lo = unchecked((UIntT)(UIntT)(UIntT.MaxValue & r_result));
+			IntT r_result_hi = unchecked((IntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I
+    public delegate UIntT Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I(UIntT first_lo, IntT first_hi, int second, out IntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl, UIntT first_lo, IntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			UIntT t_result_lo;
+			IntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			UIntT r_result_lo = unchecked((UIntT)(UIntT)(UIntT.MaxValue & r_result));
+			IntT r_result_hi = unchecked((IntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate IntT Operation_U2_int_MapsTo_U2Checked_WithSignature_I_U_int_MapsTo_I_U(IntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+    
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			IntT t_result_lo = 0;
+			UIntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerUnsigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate IntT Operation_I2_int_MapsTo_I2Checked_WithSignature_I_U_int_MapsTo_I_U(IntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			IntT t_result_lo = 0;
+			UIntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerSigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_I_U_int_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U
+    public delegate IntT Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U(IntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+    
+	public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			IntT t_result_lo;
+			UIntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			IntT r_result_lo = unchecked((IntT)(UIntT)(UIntT.MaxValue & r_result));
+			UIntT r_result_hi = unchecked((UIntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U
+    public delegate IntT Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U(IntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl, IntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			IntT t_result_lo;
+			UIntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			IntT r_result_lo = unchecked((IntT)(UIntT)(UIntT.MaxValue & r_result));
+			UIntT r_result_hi = unchecked((UIntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate UIntT Operation_U2_int_MapsTo_U2Checked_WithSignature_U_U_int_MapsTo_U_U(UIntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+    
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */UInt128_MinValue > r_result || r_result > /*= checked(2 * T) */UInt128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			UIntT t_result_lo = 0;
+			UIntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerUnsigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    public delegate UIntT Operation_I2_int_MapsTo_I2Checked_WithSignature_U_U_int_MapsTo_U_U(UIntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            bool r_ov = false;
+			var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			if (/*= checked(2 * T) */Int128_MinValue > r_result || r_result > /*= checked(2 * T) */Int128_MaxValue) {
+                r_ov = true;
+				r_result = default(BigInteger);
+			}
+            bool t_ov = false;
+			UIntT t_result_lo = 0;
+			UIntT t_result_hi = 0;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+                t_ov = true;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			var t_result = ToBigIntegerSigned(unchecked((IntT)t_result_lo), unchecked((IntT)t_result_hi));
+            return r_ov == t_ov && r_result == t_result;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Checked_WithSignature_U_U_int_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U
+    public delegate UIntT Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U(UIntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+    
+	public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerUnsigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			UIntT t_result_lo;
+			UIntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			UIntT r_result_lo = unchecked((UIntT)(UIntT)(UIntT.MaxValue & r_result));
+			UIntT r_result_hi = unchecked((UIntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
+					}
+			    }
+			}
+			return true;
+		}
+    }
+
+    // usually same as Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U
+    public delegate UIntT Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U(UIntT first_lo, UIntT first_hi, int second, out UIntT result_hi);
+
+    public static partial class TestModule {
+        
+        public static bool TestOperationSingleRun(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl, UIntT first_lo, UIntT first_hi, int second) {
+            var r_first = ToBigIntegerSigned(unchecked((IntT)first_lo), unchecked((IntT)first_hi));
+            var r_result = referenceImpl(r_first, second % /*= checked(2 * T) */128/**/);
+			UIntT t_result_lo;
+			UIntT t_result_hi;
+            try {
+                t_result_lo = testImpl(first_lo, first_hi, second, out t_result_hi);
+            } catch(OverflowException) {
+				return false;
+            } catch {
+			    // Unexcepted situations.
+				return false;
+            }
+			UIntT r_result_lo = unchecked((UIntT)(UIntT)(UIntT.MaxValue & r_result));
+			UIntT r_result_hi = unchecked((UIntT)(UIntT)(UIntT.MaxValue & (r_result >> /*= T - 1 */63/**/ >> 1)));
+            return r_result_lo == t_result_lo && r_result_hi == t_result_hi;
+        }
+
+		public static bool TestOperation(Operation_IX_int_MapsTo_IX referenceImpl, Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    for (var second = 0 - 4; second <= 128 + 4; ++second) {
+					    if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), second)) {
+					        return false;
+					    }
 					}
 			    }
 			}

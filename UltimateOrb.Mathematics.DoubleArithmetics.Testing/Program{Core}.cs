@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace XUnit__xUnit_net__T01 {
+namespace ThisAssembly {
     using Xunit;
     using BigInteger = System.Numerics.BigInteger;
     using TestModule = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations.TestModule;
@@ -552,6 +552,186 @@ namespace XUnit__xUnit_net__T01 {
         }
         
         [Fact]
+        public void Test_2_0_0_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_I_MapsTo_I_I)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_I_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_0_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_I_MapsTo_U_I)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_I_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_0_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_U_MapsTo_I_U)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_U_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_0_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_U_MapsTo_U_U)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_U_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_1_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_I_I_MapsTo_I_I)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_I_I_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_1_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_U_I_MapsTo_U_I)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_U_I_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_1_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_I_U_MapsTo_I_U)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_I_U_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_2_0_1_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x >> 1);
+            var testImpl = (ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_U_U_MapsTo_U_U)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_MapsTo_U2Unchecked_WithSignature_U_U_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_3_0_0_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x << 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_I_MapsTo_I_I)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_I_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_3_0_0_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x << 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_I_MapsTo_U_I)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_I_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_3_0_0_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x << 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_U_MapsTo_I_U)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_I_U_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_3_0_0_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)((x) => x << 1);
+            var testImpl = (ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_U_MapsTo_U_U)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_MapsTo_I2Unchecked_WithSignature_U_U_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
         public void Test_1_0_0_0() {
             var referenceImpl = (ArithmeticOperations.Operation_IX_IX_MapsTo_IX)((x, y) => x + y);
             var testImpl = (ArithmeticOperations.Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I)DoubleArithmetic.AddUnchecked;
@@ -1087,6 +1267,186 @@ namespace XUnit__xUnit_net__T01 {
                     "!!! {1}\r\n\t{0}",
                     nameof(ArithmeticOperations.Operation_U2_U2_MapsTo_U2Checked_WithSignature_U_U_U_U_MapsTo_U_U),
                     nameof(DoubleArithmetic.MultiplyUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_0_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_0_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_0_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_0_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U)DoubleArithmetic.ShiftRightSigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftRightSigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_1_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_I_int_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_1_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_I_int_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_1_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_I_U_int_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_4_0_1_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x >> y);
+            var testImpl = (ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U)DoubleArithmetic.ShiftRightUnsigned;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_U2_int_MapsTo_U2Unchecked_WithSignature_U_U_int_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftRightUnsigned)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_5_0_0_0() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x << y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_I_int_MapsTo_I_I),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_5_0_0_1() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x << y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_I_int_MapsTo_U_I),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_5_0_0_2() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x << y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_I_U_int_MapsTo_I_U),
+                    nameof(DoubleArithmetic.ShiftLeft)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+        
+        [Fact]
+        public void Test_5_0_0_3() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)((x, y) => x << y);
+            var testImpl = (ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U)DoubleArithmetic.ShiftLeft;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_I2_int_MapsTo_I2Unchecked_WithSignature_U_U_int_MapsTo_U_U),
+                    nameof(DoubleArithmetic.ShiftLeft)));
 				Assert.True(false, sb.ToString());
             }
         }

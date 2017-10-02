@@ -7,7 +7,14 @@ using System;
 using System.Linq;
 using System.Text;
 
-namespace XUnit__xUnit_net__T01 {
+namespace ThisAssembly {
+    using Xunit;
+    using BigInteger = <#= qnBigInteger #>;
+    using TestModule = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations.TestModule;
+    using ArithmeticOperations = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations;
+    using DoubleArithmetic = UltimateOrb.Mathematics.DoubleArithmetic;
+
+    public partial class Program {
 <#
 var oc_m_s = new string[] {
     @"Unchecked",
@@ -36,13 +43,6 @@ var oc_uo_m2_s = new string[] {
 	@"U_U_MapsTo_U_U",
 };
 #>
-    using Xunit;
-    using BigInteger = <#= qnBigInteger #>;
-    using TestModule = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations.TestModule;
-    using ArithmeticOperations = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations;
-    using DoubleArithmetic = UltimateOrb.Mathematics.DoubleArithmetic;
-
-    public partial class Program {
 <#
 for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
     var oc_uo_r = oc_uo_r_s[i];
@@ -75,6 +75,110 @@ for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
 }
 #>
 <#
+var oc_m_h_s = new string[] {
+    @"Signed",
+	@"Unsigned",
+};
+var oc_uo_h_r_s = new string[] {
+	@"((x) => x >> 1)",
+};
+var oc_m1_h_s = new string[] {
+    @"I2_MapsTo_I2Unchecked",
+	@"U2_MapsTo_U2Unchecked",
+};
+var oc_uo_h_t_s_s = new string[][] {
+	(from x in oc_m_h_s select $@"DoubleArithmetic.ShiftRight{x}").ToArray(),
+};
+var oc_uo_h_m2_s = new string[] {
+    @"I_I_MapsTo_I_I",
+	@"U_I_MapsTo_U_I",
+	@"I_U_MapsTo_I_U",
+	@"U_U_MapsTo_U_U",
+};
+#>
+<#
+for (var i = 0; oc_uo_h_r_s.Length > i ; ++i) {
+    var oc_uo_h_r = oc_uo_h_r_s[i];
+	var oc_uo_h_t_s = oc_uo_h_t_s_s[i];
+	for (var j = 0; oc_m_h_s.Length > j ; ++j) {
+	    var oc_uo_h_t = oc_uo_h_t_s[j];
+	    var oc_m_h = oc_m_h_s[j];
+	    var oc_uo_h_m1 = oc_m1_h_s[j];
+	    for (var k = 0; oc_uo_h_m2_s.Length > k ; ++k) {
+	        var oc_uo_h_m2 = oc_uo_h_m2_s[k];
+#>
+        
+        [Fact]
+        public void Test_2_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)<#= oc_uo_h_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_uo_h_m1 #>_WithSignature_<#= oc_uo_h_m2 #>)<#= oc_uo_h_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_uo_h_m1 #>_WithSignature_<#= oc_uo_h_m2 #>),
+                    nameof(<#= oc_uo_h_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+<#
+var oc_m_k_s = new string[] {
+    @"",
+};
+var oc_uo_k_r_s = new string[] {
+	@"((x) => x << 1)",
+};
+var oc_m1_k_s = new string[] {
+    @"I2_MapsTo_I2Unchecked",
+};
+var oc_uo_k_t_s_s = new string[][] {
+	(from x in oc_m_k_s select $@"DoubleArithmetic.ShiftLeft{x}").ToArray(),
+};
+var oc_uo_k_m2_s = new string[] {
+    @"I_I_MapsTo_I_I",
+	@"U_I_MapsTo_U_I",
+	@"I_U_MapsTo_I_U",
+	@"U_U_MapsTo_U_U",
+};
+#>
+<#
+for (var i = 0; oc_uo_k_r_s.Length > i ; ++i) {
+    var oc_uo_k_r = oc_uo_k_r_s[i];
+	var oc_uo_k_t_s = oc_uo_k_t_s_s[i];
+	for (var j = 0; oc_m_k_s.Length > j ; ++j) {
+	    var oc_uo_k_t = oc_uo_k_t_s[j];
+	    var oc_m_k = oc_m_k_s[j];
+	    var oc_uo_k_m1 = oc_m1_k_s[j];
+	    for (var k = 0; oc_uo_k_m2_s.Length > k ; ++k) {
+	        var oc_uo_k_m2 = oc_uo_k_m2_s[k];
+#>
+        
+        [Fact]
+        public void Test_3_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_MapsTo_IX)<#= oc_uo_k_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_uo_k_m1 #>_WithSignature_<#= oc_uo_k_m2 #>)<#= oc_uo_k_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_uo_k_m1 #>_WithSignature_<#= oc_uo_k_m2 #>),
+                    nameof(<#= oc_uo_k_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+<#
 var oc_bo_r_s = new string[] {
     @"((x, y) => x + y)",
 	@"((x, y) => x - y)",
@@ -98,7 +202,7 @@ var oc_bo_m2_s = new string[] {
 };
 #>
 <#
-for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
+for (var i = 0; oc_bo_r_s.Length > i ; ++i) {
     var oc_bo_r = oc_bo_r_s[i];
 	var oc_bo_t_s = oc_bo_t_s_s[i];
 	for (var j = 0; oc_m_s.Length > j ; ++j) {
@@ -120,6 +224,103 @@ for (var i = 0; oc_uo_r_s.Length > i ; ++i) {
                     "!!! {1}\r\n\t{0}",
                     nameof(ArithmeticOperations.Operation_<#= oc_bo_m1 #>_WithSignature_<#= oc_bo_m2 #>),
                     nameof(<#= oc_bo_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+<#
+var oc_bo_h_r_s = new string[] {
+	@"((x, y) => x >> y)",
+};
+var oc_m2_h_s = new string[] {
+    @"I2_int_MapsTo_I2Unchecked",
+    @"U2_int_MapsTo_U2Unchecked",
+};
+var oc_bo_h_t_s_s = new string[][] {
+	(from x in oc_m_h_s select $@"DoubleArithmetic.ShiftRight{x}").ToArray(),
+};
+var oc_bo_m2_h_s = new string[] {
+    @"I_I_int_MapsTo_I_I",
+	@"U_I_int_MapsTo_U_I",
+	@"I_U_int_MapsTo_I_U",
+	@"U_U_int_MapsTo_U_U",
+};
+#>
+<#
+for (var i = 0; oc_bo_h_r_s.Length > i ; ++i) {
+    var oc_bo_h_r = oc_bo_h_r_s[i];
+	var oc_bo_h_t_s = oc_bo_h_t_s_s[i];
+	for (var j = 0; oc_m_h_s.Length > j ; ++j) {
+	    var oc_bo_h_t = oc_bo_h_t_s[j];
+	    var oc_m_h = oc_m_h_s[j];
+	    var oc_bo_h_m1 = oc_m2_h_s[j];
+	    for (var k = 0; oc_bo_m2_h_s.Length > k ; ++k) {
+	        var oc_bo_m2_h = oc_bo_m2_h_s[k];
+#>
+        
+        [Fact]
+        public void Test_4_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)<#= oc_bo_h_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_bo_h_m1 #>_WithSignature_<#= oc_bo_m2_h #>)<#= oc_bo_h_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_bo_h_m1 #>_WithSignature_<#= oc_bo_m2_h #>),
+                    nameof(<#= oc_bo_h_t #>)));
+				Assert.True(false, sb.ToString());
+            }
+        }
+<#
+        }
+    }
+}
+#>
+<#
+var oc_bo_k_r_s = new string[] {
+	@"((x, y) => x << y)",
+};
+var oc_m2_k_s = new string[] {
+    @"I2_int_MapsTo_I2Unchecked",
+};
+var oc_bo_k_t_s_s = new string[][] {
+	(from x in oc_m_k_s select $@"DoubleArithmetic.ShiftLeft{x}").ToArray(),
+};
+var oc_bo_m2_k_s = new string[] {
+    @"I_I_int_MapsTo_I_I",
+	@"U_I_int_MapsTo_U_I",
+	@"I_U_int_MapsTo_I_U",
+	@"U_U_int_MapsTo_U_U",
+};
+#>
+<#
+for (var i = 0; oc_bo_k_r_s.Length > i ; ++i) {
+    var oc_bo_k_r = oc_bo_k_r_s[i];
+	var oc_bo_k_t_s = oc_bo_k_t_s_s[i];
+	for (var j = 0; oc_m_k_s.Length > j ; ++j) {
+	    var oc_bo_k_t = oc_bo_k_t_s[j];
+	    var oc_m_k = oc_m_k_s[j];
+	    var oc_bo_k_m1 = oc_m2_k_s[j];
+	    for (var k = 0; oc_bo_m2_k_s.Length > k ; ++k) {
+	        var oc_bo_m2_k = oc_bo_m2_k_s[k];
+#>
+        
+        [Fact]
+        public void Test_5_<#= i #>_<#= j #>_<#= k #>() {
+            var referenceImpl = (ArithmeticOperations.Operation_IX_int_MapsTo_IX)<#= oc_bo_k_r #>;
+            var testImpl = (ArithmeticOperations.Operation_<#= oc_bo_k_m1 #>_WithSignature_<#= oc_bo_m2_k #>)<#= oc_bo_k_t #>;
+            var b = TestModule.TestOperation(referenceImpl, testImpl);
+            if (!b) {
+                var sb = new StringBuilder();
+                sb.AppendLine(string.Format(
+                    "!!! {1}\r\n\t{0}",
+                    nameof(ArithmeticOperations.Operation_<#= oc_bo_k_m1 #>_WithSignature_<#= oc_bo_m2_k #>),
+                    nameof(<#= oc_bo_k_t #>)));
 				Assert.True(false, sb.ToString());
             }
         }
