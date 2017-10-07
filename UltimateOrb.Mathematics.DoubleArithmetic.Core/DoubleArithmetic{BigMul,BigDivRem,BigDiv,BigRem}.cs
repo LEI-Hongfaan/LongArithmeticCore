@@ -264,7 +264,7 @@ namespace UltimateOrb.Mathematics {
             highResult = unchecked((Long)r - (-(Long)((ULong)first >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & second) - (-(Long)((ULong)second >> (ULong_Misc.BitSizeAsIntUnchecked - 1)) & first));
             return q;
         }
-        
+
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         // primary overload
@@ -395,6 +395,43 @@ namespace UltimateOrb.Mathematics {
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static Long BigMulAsSigned(Long first, Long second, out Long highResult) {
             return unchecked((Long)BigMul(first, second, out highResult));
+        }
+
+        [System.CLSCompliantAttribute(false)]
+        [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        public static ULong BigMul(ULong first_lo, ULong first_hi, ULong second_lo, ULong second_hi, out ULong result_lo_hi, out ULong result_hi_lo, out ULong result_hi_hi) {
+            unchecked {
+                var fl = first_lo;
+                var fh = first_hi;
+                var sl = second_lo;
+                var sh = second_hi;
+                var lll = BigMul(fl, sl, out ULong llh);
+                var hhl = BigMul(fh, sh, out ULong hhh);
+                var fm = unchecked(fh + fl);
+                var sm = unchecked(sh + sl);
+                var tl = AddUnchecked(hhl, hhh, lll, llh, out ULong th);
+                var mml = BigMul(fm, sm, out ULong mmh);
+                if (fm < fl) {
+                    mml = AddUnchecked(mml, mmh, 0, sm, out mmh);
+                }
+                if (sm < sl) {
+                    mml = AddUnchecked(mml, mmh, 0, fm, out mmh);
+                }
+                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
+                llh = unchecked(llh + mml);
+                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
+                var m = unchecked(fm + sm);
+                var n = (m >> 1) | (m < sm ? ((ULong)1) << (64 - 1) : 0);
+                if (n < mmh) {
+                    unchecked {
+                        --hhh;
+                    }
+                }
+                result_hi_hi = hhh;
+                result_hi_lo = hhl;
+                result_lo_hi = llh;
+                return lll;
+            }
         }
 
         [System.CLSCompliantAttribute(false)]
