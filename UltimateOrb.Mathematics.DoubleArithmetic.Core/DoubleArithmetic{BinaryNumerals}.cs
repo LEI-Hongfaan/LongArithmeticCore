@@ -17,9 +17,27 @@ namespace UltimateOrb.Mathematics {
 
     public static partial class DoubleArithmetic {
 
+        /// <summary>
+        ///     <para>
+        ///         Computes the bit pattern of the next permutation in the lexicographical order.
+        ///         If the current permutation is already the maximum, the result will be the pattern with all bits <c>1</c>.
+        ///     </para>
+        /// </summary>
+        /// <param name="lo">
+        ///     <para>The <c>lo</c> part of the current bit pattern.</para>
+        /// </param>
+        /// <param name="hi">
+        ///     <para>The <c>hi</c> part of the current bit pattern.</para>
+        /// </param>
+        /// <param name="result_hi">
+        ///     <para>The <c>hi</c> part of the next bit pattern.</para>
+        /// </param>
+        /// <returns>
+        ///     <para>The <c>lo</c> part of the next bit pattern.</para>
+        /// </returns>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-        public static ULong NextPermutation(ULong lo, ULong hi, out ULong highResult) {
+        public static ULong NextPermutation(ULong lo, ULong hi, out ULong result_hi) {
             unchecked {
                 ULong loT;
                 ULong hiT;
@@ -27,7 +45,7 @@ namespace UltimateOrb.Mathematics {
                 ULong hiV;
                 if (0u == lo) {
                     if (0u == hi) {
-                        highResult = ULong.MaxValue;
+                        result_hi = ULong.MaxValue;
                         return ULong.MaxValue;
                     }
                     hiT = (hi | (hi - 1u)) + 1u;
@@ -35,10 +53,10 @@ namespace UltimateOrb.Mathematics {
                     loV = ((hiT & (ULong)(-(Long)hiT)) / hiV) >> 1;
                     hiV = 0u;
                     if (0u == loV) {
-                        highResult = ULong.MaxValue;
+                        result_hi = ULong.MaxValue;
                         return ULong.MaxValue;
                     } else {
-                        highResult = hiT;
+                        result_hi = hiT;
                         return loV - 1u;
                     }
                 } else {
@@ -55,7 +73,7 @@ namespace UltimateOrb.Mathematics {
                     if (0u == loV--) {
                         --hiV;
                     }
-                    highResult = hiT | hiV;
+                    result_hi = hiT | hiV;
                     return loT | loV;
                 }
             }

@@ -15,6 +15,12 @@ namespace UltimateOrb {
         using Int64_Misc = Mathematics.Internal.SizeOfModule.Int64;
         using IntPtr_Misc = Mathematics.Internal.SizeOfModule.IntPtr;
 
+        /// <summary>
+        ///     <para>
+        ///         This API supports the product infrastructure and is not intended to be used directly from your code.
+        ///         Stubs for <see cref="global::System.Math"/>.
+        ///     </para>
+        /// </summary>
         public static partial class Math {
 
             [System.CLSCompliantAttribute(false)]
@@ -59,6 +65,11 @@ namespace UltimateOrb.Mathematics {
     using Int = Int32;
     using Long = Int64;
 
+    /// <summary>
+    ///     <para>
+    ///         Provides double precision operations of <see cref="Long"/> and <see cref="ULong"/> and other operations to support longer numeric data types. 
+    ///     </para>
+    /// </summary>
     public static partial class DoubleArithmetic {
 
         /*
