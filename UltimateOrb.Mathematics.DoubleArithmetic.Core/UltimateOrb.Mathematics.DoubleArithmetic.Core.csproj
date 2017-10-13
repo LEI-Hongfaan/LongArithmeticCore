@@ -21,16 +21,18 @@
     <AssemblyVersion>1</AssemblyVersion>
     <PackageReleaseNotes>Experimental.
 </PackageReleaseNotes>
-    <Version>1.2.7</Version>
+    <Version>1.2.8</Version>
     <FileVersion>1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>bin\Release\netstandard1.0\UltimateOrb.Mathematics.DoubleArithmetic.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>bin\Debug\netstandard1.0\UltimateOrb.Mathematics.DoubleArithmetic.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
