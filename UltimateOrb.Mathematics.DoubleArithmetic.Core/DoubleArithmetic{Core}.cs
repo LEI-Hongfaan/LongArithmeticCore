@@ -16,35 +16,35 @@ namespace UltimateOrb.Mathematics {
 
 	public static partial class DoubleArithmetic {
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// 2.67 Cyc (special input set test6)
@@ -58,35 +58,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two signed operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two signed operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -106,35 +106,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two unsigned operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two unsigned operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -147,35 +147,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -223,29 +223,29 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Negates the specified value of an operand with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="value_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="value_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Negates the specified value of an operand with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="value_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="value_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -278,35 +278,35 @@ namespace UltimateOrb.Mathematics {
 			return 0;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Multiplies the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Multiplies the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
@@ -382,35 +382,35 @@ namespace UltimateOrb.Mathematics {
 
 	public static partial class DoubleArithmetic {
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// 2.67 Cyc (special input set test6)
@@ -424,35 +424,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two signed operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two signed operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -472,35 +472,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two unsigned operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two unsigned operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -513,35 +513,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -589,29 +589,29 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Negates the specified value of an operand with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="value_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="value_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Negates the specified value of an operand with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="value_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="value_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -644,35 +644,35 @@ namespace UltimateOrb.Mathematics {
 			return 0;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Multiplies the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Multiplies the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
@@ -748,35 +748,35 @@ namespace UltimateOrb.Mathematics {
 
 	public static partial class DoubleArithmetic {
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// 2.67 Cyc (special input set test6)
@@ -790,35 +790,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two signed operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two signed operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -838,35 +838,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two unsigned operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two unsigned operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -879,35 +879,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -955,29 +955,29 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Negates the specified value of an operand with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="value_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="value_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Negates the specified value of an operand with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="value_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="value_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -1010,35 +1010,35 @@ namespace UltimateOrb.Mathematics {
 			return 0;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Multiplies the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Multiplies the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
@@ -1114,35 +1114,35 @@ namespace UltimateOrb.Mathematics {
 
 	public static partial class DoubleArithmetic {
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// 2.67 Cyc (special input set test6)
@@ -1156,35 +1156,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two signed operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two signed operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as signed operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddSigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -1204,35 +1204,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Adds the specified values of two unsigned operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Adds the specified values of two unsigned operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, <see cref="OverflowException"/> will be thrown.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         The operands of this operation are interpreted as unsigned operands regardless of the sign interpretations implied from their signatures.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT AddUnsigned(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -1245,35 +1245,35 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Subtracts the value of one operand with double-precision data from the value of another operand with double-precision data and returns the result.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT SubtractUnchecked(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi, out HIntT result_hi) {
@@ -1321,29 +1321,29 @@ namespace UltimateOrb.Mathematics {
 			return result_lo_;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Negates the specified value of an operand with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="value_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="value_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Negates the specified value of an operand with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="value_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="value_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static LIntT NegateUnchecked(LIntT value_lo, HIntT value_hi, out HIntT result_hi) {
@@ -1376,35 +1376,35 @@ namespace UltimateOrb.Mathematics {
 			return 0;
 		}
 
-        /// <summary>
-        ///     <para>
-        ///         Multiplies the specified values of two operands with double-precision data.
-        ///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
-        ///     </para>
-        /// </summary>
-        /// <param name="first_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="first_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
-        /// </param>
-        /// <param name="second_lo">
-        ///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="second_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
-        /// </param>
-        /// <param name="result_hi">
-        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
-        /// </param>
-        /// <returns>
-        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
-        ///     </para>
-        /// </remarks>
+		/// <summary>
+		///     <para>
+		///         Multiplies the specified values of two operands with double-precision data.
+		///         If the result can not be represented in regard to the precision of the destination, no exception will be thrown and the result will be truncated, ignoring the bits beyond the precision.
+		///     </para>
+		/// </summary>
+		/// <param name="first_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="first_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the first operand.</para>
+		/// </param>
+		/// <param name="second_lo">
+		///     <para>The <c>lo</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="second_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the second operand.</para>
+		/// </param>
+		/// <param name="result_hi">
+		///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
+		/// </param>
+		/// <returns>
+		///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
+		/// </returns>
+		/// <remarks>
+		///     <para>
+		///         Of this operation, the sign interpretations of the operands do not matter and both signed and unsigned versions yield the same results.
+		///     </para>
+		/// </remarks>
 		[System.CLSCompliantAttribute(true)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		// ~17.5 cyc
