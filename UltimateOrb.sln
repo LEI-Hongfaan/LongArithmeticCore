@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateOrb.Mathematics.DoubleArithmetic.Core", "UltimateOrb.Mathematics.DoubleArithmetic.Core\UltimateOrb.Mathematics.DoubleArithmetic.Core.csproj", "{8F835E79-D03A-480F-A51A-E6BC13CCB961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateOrb.Mathematics.DoubleArithmetics.Testing", "UltimateOrb.Mathematics.DoubleArithmetics.Testing\UltimateOrb.Mathematics.DoubleArithmetics.Testing.csproj", "{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UltimateOrb.Mathematics.DoubleArithmetic.Tests", "UltimateOrb.Mathematics.DoubleArithmetic.Tests\UltimateOrb.Mathematics.DoubleArithmetic.Tests.csproj", "{BCACA6D6-BC18-47CA-87B9-8B75ADBB77AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
