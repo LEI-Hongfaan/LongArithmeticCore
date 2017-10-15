@@ -16,6 +16,7 @@ namespace UltimateOrb.Mathematics {
     using MathEx = DoubleArithmetic;
 
     public static partial class DoubleArithmetic {
+
         /*
         [System.Runtime.ConstrainedExecution.ReliabilityContractAttribute(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)]
         [System.Runtime.TargetedPatchingOptOutAttribute(null)]
@@ -80,6 +81,18 @@ namespace UltimateOrb.Mathematics {
             }
         }
 
+        /// <summary>
+        ///     <para>Returns the square root of a specified value of an operand with double-precision data.</para>
+        /// </summary>
+        /// <param name="lo">
+        ///     <para>The <c>lo</c> bits of the radicand.</para>
+        /// </param>
+        /// <param name="hi">
+        ///     <para>The <c>hi</c> bits of the radicand.</para>
+        /// </param>
+        /// <returns>
+        ///     <para>The square root.</para>
+        /// </returns>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong BigSqrt(ULong lo, ULong hi) {
@@ -152,14 +165,20 @@ namespace UltimateOrb.Mathematics {
 
 
         /// <summary>
-        /// Returns the square root of a specified number.
+        ///     <para>Returns the square root of a specified number.</para>
         /// </summary>
-        /// <param name="radicand">The radicand. </param>
+        /// <param name="radicand">
+        ///     <para>The radicand.</para>
+        /// </param>
         /// <returns>
-        /// The truncated (upto double precision) value of the positive square root of <paramref name="radicand"/>;
-        /// that is, (of the return value)
-        ///     the higher half: the integral part of the square root - and -
-        ///     thr lower half: the fractional part of the square root.
+        ///     <para>
+        ///         The truncated (upto double precision) value of the positive square root of <paramref name="radicand"/>;
+        ///         that is, (of the return value)
+        ///         <list type="bullet">
+        ///             <item><term>the higher half</term><description>: the integral part of the square root -and-</description></item>
+        ///             <item><term>the lower half</term><description>: the fractional part of the square root.</description></item>
+        ///         </list>
+        ///     </para>
         /// </returns>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]

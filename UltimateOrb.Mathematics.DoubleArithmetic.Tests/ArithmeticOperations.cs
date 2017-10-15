@@ -1106,6 +1106,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Checked_WithSignature_I_I_I_I_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     public delegate IntT Operation_I2_I2_MapsTo_I2Checked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi);
@@ -1141,6 +1161,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Checked_WithSignature_I_I_I_I_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1194,6 +1234,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I(IntT first_lo, IntT first_hi, IntT second_lo, IntT second_hi, out IntT result_hi)
@@ -1225,6 +1285,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_I_I_I_MapsTo_I_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((IntT)first_hi), unchecked((IntT)second_lo), unchecked((IntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1282,6 +1362,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Checked_WithSignature_U_I_U_I_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     public delegate UIntT Operation_I2_I2_MapsTo_I2Checked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi);
@@ -1317,6 +1417,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Checked_WithSignature_U_I_U_I_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1370,6 +1490,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I(UIntT first_lo, IntT first_hi, UIntT second_lo, IntT second_hi, out IntT result_hi)
@@ -1401,6 +1541,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_I_U_I_MapsTo_U_I testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((IntT)first_hi), unchecked((UIntT)second_lo), unchecked((IntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1458,6 +1618,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Checked_WithSignature_I_U_I_U_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     public delegate IntT Operation_I2_I2_MapsTo_I2Checked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi);
@@ -1493,6 +1673,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Checked_WithSignature_I_U_I_U_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1546,6 +1746,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U(IntT first_lo, UIntT first_hi, IntT second_lo, UIntT second_hi, out UIntT result_hi)
@@ -1577,6 +1797,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_I_U_I_U_MapsTo_I_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((IntT)first_lo), unchecked((UIntT)first_hi), unchecked((IntT)second_lo), unchecked((UIntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1634,6 +1874,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Checked_WithSignature_U_U_U_U_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     public delegate UIntT Operation_I2_I2_MapsTo_I2Checked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi);
@@ -1669,6 +1929,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Checked_WithSignature_U_U_U_U_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude5.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude5.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
@@ -1722,6 +2002,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			}
 			return true;
 		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
     }
 
     // usually same as Operation_U2_U2_MapsTo_U2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U(UIntT first_lo, UIntT first_hi, UIntT second_lo, UIntT second_hi, out UIntT result_hi)
@@ -1753,6 +2053,26 @@ namespace UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations {
 			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
 				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
 			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
+							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
+								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));
+					            return false;
+					        }
+						}
+					}
+			    }
+			}
+			return true;
+		}
+
+		public static bool TestOperationDivision(Operation_IX_IX_MapsTo_IX referenceImpl, Operation_I2_I2_MapsTo_I2Unchecked_WithSignature_U_U_U_U_MapsTo_U_U testImpl) {
+		    foreach (var first_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			    foreach (var first_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+				    foreach (var second_hi in Int64CollectionTestDataSourceMagnitude6.Default) {
+			            foreach (var second_lo in Int64CollectionTestDataSourceMagnitude6.Default) {
+							if (0 == second_lo && 0 == second_hi) {
+								continue;
+							}
 			                if (!TestOperationSingleRun(referenceImpl, testImpl, unchecked((UIntT)first_lo), unchecked((UIntT)first_hi), unchecked((UIntT)second_lo), unchecked((UIntT)second_hi))) {
 							    Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(first_hi, 2).PadLeft(64, '0'), Convert.ToString(first_lo, 2).PadLeft(64, '0'));
 								Console.WriteLine("{0}\r\n\t{1}", Convert.ToString(second_hi, 2).PadLeft(64, '0'), Convert.ToString(second_lo, 2).PadLeft(64, '0'));

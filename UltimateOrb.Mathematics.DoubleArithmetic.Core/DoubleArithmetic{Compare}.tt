@@ -46,25 +46,25 @@ namespace UltimateOrb.Mathematics {
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static bool LessThan(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi) {
-			return  first_hi < second_hi || (first_hi == second_hi && first_lo < second_lo);
+			return first_hi < second_hi || (first_hi == second_hi && first_lo < second_lo);
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static bool LessThanOrEqual(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi) {
-			return  first_hi <= second_hi && (first_hi != second_hi || first_lo <= second_lo);
+			return first_hi <= second_hi && (first_hi != second_hi || first_lo <= second_lo);
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static bool GreaterThan(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi) {
-			return  first_hi > second_hi || (first_hi == second_hi && first_lo > second_lo);
+			return first_hi > second_hi || (first_hi == second_hi && first_lo > second_lo);
 		}
 
 		[System.CLSCompliantAttribute(false)]
 		[System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
 		public static bool GreaterThanOrEqual(LIntT first_lo, HIntT first_hi, LIntT second_lo, HIntT second_hi) {
-			return  first_hi >= second_hi && (first_hi != second_hi || first_lo >= second_lo);
+			return first_hi >= second_hi && (first_hi != second_hi || first_lo >= second_lo);
 		}
 
 		[System.CLSCompliantAttribute(false)]
