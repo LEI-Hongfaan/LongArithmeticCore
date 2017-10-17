@@ -436,6 +436,49 @@ namespace UltimateOrb.Mathematics {
 
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        public static ULong BigMul(ULong first_lo, Long first_hi, ULong second_lo, Long second_hi, out ULong result_lo_hi, out ULong result_hi_lo, out Long result_hi_hi) {
+            unchecked {
+                var fl = first_lo;
+                var fh = unchecked((ULong)first_hi);
+                var sl = second_lo;
+                var sh = unchecked((ULong)second_hi);
+                var lll = BigMul(fl, sl, out ULong llh);
+                var hhl = BigMul(fh, sh, out ULong hhh);
+                var fm = unchecked(fh + fl);
+                var sm = unchecked(sh + sl);
+                var tl = AddUnchecked(hhl, hhh, lll, llh, out ULong th);
+                var mml = BigMul(fm, sm, out ULong mmh);
+                if (fm < fl) {
+                    mml = AddUnchecked(mml, mmh, 0, sm, out mmh);
+                }
+                if (sm < sl) {
+                    mml = AddUnchecked(mml, mmh, 0, fm, out mmh);
+                }
+                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
+                llh = unchecked(llh + mml);
+                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
+                var m = unchecked(fm + sm);
+                var n = (m >> 1) | (m < sm ? ((ULong)1) << (64 - 1) : 0);
+                if (n < mmh) {
+                    unchecked {
+                        --hhh;
+                    }
+                }
+                if (0 > unchecked((Long)fh)) {
+                    hhl = SubtractUnchecked(hhl, hhh, sl, sh, out hhh);
+                }
+                if (0 > unchecked((Long)sh)) {
+                    hhl = SubtractUnchecked(hhl, hhh, fl, fh, out hhh);
+                }
+                result_hi_hi = unchecked((Long)hhh);
+                result_hi_lo = hhl;
+                result_lo_hi = llh;
+                return lll;
+            }
+        }
+
+        [System.CLSCompliantAttribute(false)]
+        [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong BigRemUnchecked(ULong lowDividend, ULong highDividend, ULong divisor) {
             unchecked {
                 ULong p;

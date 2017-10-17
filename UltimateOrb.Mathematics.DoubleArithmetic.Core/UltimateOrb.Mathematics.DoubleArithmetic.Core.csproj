@@ -6,7 +6,7 @@
     <Authors>LEI Hongfaan</Authors>
     <Company>LEI Hongfaan</Company>
     <Product>UltimateOrb Libraries</Product>
-    <Description>Defines some operations to support Int128.
+    <Description>Defines some operations to support Int128 and UInt128.
 </Description>
     <Copyright>Copyright © 2017 LEI Hongfaan. Distributed under the MIT License.</Copyright>
     <PackageLicenseUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core/blob/master/LICENSE</PackageLicenseUrl>
@@ -16,10 +16,11 @@
     <RepositoryType></RepositoryType>
     <RepositoryUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core.git</RepositoryUrl>
     <PackageProjectUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core</PackageProjectUrl>
-    <PackageTags>Int128</PackageTags>
+    <PackageTags>Int128 UInt128 UltimateOrb</PackageTags>
     <Title>UltimateOrb.Mathematics.DoubleArithmetic.Core - UltimateOrb Libraries</Title>
     <AssemblyVersion>1</AssemblyVersion>
     <PackageReleaseNotes>Experimental.
+This package does not include the test suite. See Project Site for more information.
 </PackageReleaseNotes>
     <Version>1.2.8</Version>
     <FileVersion>1</FileVersion>
