@@ -14,7 +14,7 @@ public class Program {
 
     public static void main(String[] args) {
         long first_hi = 1;
-        long first_lo = 7;
+        long first_lo = 2;
         long second_hi = 3;
         long second_lo = 1;
         long[] ref_result_hi = new long[1];
