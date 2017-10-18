@@ -6,7 +6,29 @@ Defines some operations to support Int128 and UInt128.
 
 ### Getting Started
 
-WIP...
+```java
+import java.lang.*;
+
+import cli.System.Convert;
+import cli.System.UInt64;
+import cli.UltimateOrb.*;
+import cli.UltimateOrb.Mathematics.DoubleArithmetic;
+
+public class Java_T02 {
+
+	public static void main(String[] args) {
+		long first_hi = 1;
+		long first_lo = 7;
+		long second_hi = 3;
+		long second_lo = 1;
+		long[] ref_result_hi = new long[1];
+		long result_lo = DoubleArithmetic.MultiplyUnchecked(first_lo, first_hi, second_lo, second_hi, ref_result_hi);
+		long result_hi = ref_result_hi[0];
+		System.out.println(((Long) result_hi).toString());
+		System.out.println(((Long) result_lo).toString());
+	}
+}
+```
 
 ### License
 
