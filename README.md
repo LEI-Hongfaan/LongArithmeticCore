@@ -22,6 +22,14 @@ public class Program {
         long result_hi = ref_result_hi[0];
         System.out.println(((Long) result_hi).toString());
         System.out.println(((Long) result_lo).toString());
+        /*
+        0x00000000_00000001_00000000_00000002 * 0x00000000_00000003_00000000_00000001
+         == 0x00000000_00000000_00000000_00000003_00000000_00000007_00000000_00000002
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        Output:
+        7
+        2
+        */
     }
 }
 ```
