@@ -29,6 +29,23 @@ namespace UltimateOrb.Mathematics {
         }
         */
 
+        /// <summary>
+        ///     <para>
+        ///         Returns the square root of the specified value of an operand with double-precision data.
+        ///     </para>
+        /// </summary>
+        /// <param name="lo">
+        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
+        /// </param>
+        /// <param name="hi">
+        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
+        /// </param>
+        /// <returns>
+        ///     <para>The square root.</para>
+        /// </returns>
+        /// <remarks>
+        ///     <para>The result is rounded towards zero.</para>
+        /// </remarks>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong BigSqrt(ULong lo, UInt hi) {
