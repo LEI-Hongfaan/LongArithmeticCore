@@ -10,7 +10,7 @@
 </Description>
     <Copyright>Copyright © 2017 LEI Hongfaan. Distributed under the MIT License.</Copyright>
     <PackageLicenseUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core/blob/master/LICENSE</PackageLicenseUrl>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType></RepositoryType>
