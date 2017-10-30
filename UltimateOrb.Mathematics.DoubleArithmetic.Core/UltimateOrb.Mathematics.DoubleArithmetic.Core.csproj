@@ -6,7 +6,7 @@
     <Authors>LEI Hongfaan</Authors>
     <Company>LEI Hongfaan</Company>
     <Product>UltimateOrb Libraries</Product>
-    <Description>Defines some operations to support Int128 and UInt128.
+    <Description>Provides static methods to support Int128 and UInt128.
 </Description>
     <Copyright>Copyright © 2017 LEI Hongfaan. Distributed under the MIT License.</Copyright>
     <PackageLicenseUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core/blob/master/LICENSE</PackageLicenseUrl>
