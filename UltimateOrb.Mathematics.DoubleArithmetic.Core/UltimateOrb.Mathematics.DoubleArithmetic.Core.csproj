@@ -14,7 +14,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType></RepositoryType>
-    <RepositoryUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core.git</RepositoryUrl>
+    <RepositoryUrl></RepositoryUrl>
     <PackageProjectUrl>https://github.com/LEI-Hongfaan/UltimateOrb.Mathematics.DoubleArithmetic.Core</PackageProjectUrl>
     <PackageTags>Int128 UInt128 UltimateOrb</PackageTags>
     <Title>UltimateOrb.Mathematics.DoubleArithmetic.Core - UltimateOrb Libraries</Title>
