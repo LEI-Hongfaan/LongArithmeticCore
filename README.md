@@ -37,6 +37,12 @@ public class Program {
 }
 ```
 
+### Common Issues and FAQs
+
+##### Conditional Compilation Symbols Not Working
+
+https://stackoverflow.com/questions/38040466/conditional-compilation-symbol-for-net-core-class-library
+
 ### License
 
 UltimateOrb.Mathematics.DoubleArithmetic.Core is licensed under the [MIT license](LICENSE).
