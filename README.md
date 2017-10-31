@@ -39,7 +39,7 @@ public class Program {
 
 ### Common Issues and FAQs
 
-##### Conditional Compilation Symbols Not Working
+#### Conditional Compilation Symbols Not Working
 
 See [this post](https://stackoverflow.com/questions/38040466/conditional-compilation-symbol-for-net-core-class-library).
 
