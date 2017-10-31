@@ -41,7 +41,7 @@ public class Program {
 
 ##### Conditional Compilation Symbols Not Working
 
-https://stackoverflow.com/questions/38040466/conditional-compilation-symbol-for-net-core-class-library
+See [![this post](https://stackoverflow.com/questions/38040466/conditional-compilation-symbol-for-net-core-class-library)].
 
 ### License
 
