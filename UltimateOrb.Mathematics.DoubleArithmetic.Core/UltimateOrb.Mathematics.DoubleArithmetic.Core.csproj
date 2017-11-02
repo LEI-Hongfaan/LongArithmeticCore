@@ -22,7 +22,7 @@
     <PackageReleaseNotes>Experimental.
 This package does not include the test suite. See Project Site for more information.
 </PackageReleaseNotes>
-    <Version>1.2.9</Version>
+    <Version>1.2.10</Version>
     <FileVersion>1</FileVersion>
   </PropertyGroup>
 

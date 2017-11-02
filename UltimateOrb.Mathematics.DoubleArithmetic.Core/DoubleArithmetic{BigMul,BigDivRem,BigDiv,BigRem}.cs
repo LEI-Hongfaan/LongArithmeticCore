@@ -92,7 +92,7 @@ namespace UltimateOrb.Mathematics {
 
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-        public static ULong BigDivRemUnchecked(ULong lowDividend, ULong highDividend, ULong divisor, out ULong remainder) {
+        public static ULong BigDivRemNoThrow(ULong lowDividend, ULong highDividend, ULong divisor, out ULong remainder) {
             unchecked {
                 ULong p, ql, qh;
                 if (0u == highDividend) {
@@ -155,7 +155,7 @@ namespace UltimateOrb.Mathematics {
 
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-        public static ULong BigDivUnchecked(ULong lowDividend, ULong highDividend, ULong divisor) {
+        public static ULong BigDivNoThrow(ULong lowDividend, ULong highDividend, ULong divisor) {
             unchecked {
                 ULong p, ql, qh;
                 if (0u == highDividend) {
@@ -479,7 +479,7 @@ namespace UltimateOrb.Mathematics {
 
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
-        public static ULong BigRemUnchecked(ULong lowDividend, ULong highDividend, ULong divisor) {
+        public static ULong BigRemNoThrow(ULong lowDividend, ULong highDividend, ULong divisor) {
             unchecked {
                 ULong p;
                 if (0u == highDividend) {
@@ -494,8 +494,8 @@ namespace UltimateOrb.Mathematics {
                     int c = 0;
                     if (0 <= (Long)divisor) {
                         do {
-                            ++c;
                             divisor <<= 1;
+                            ++c;
                         } while (0 <= (Long)divisor);
                         highDividend = (highDividend << c) | (lowDividend >> (ULong_Misc.BitSizeAsIntUnchecked - c));
                         lowDividend = lowDividend << c;
@@ -528,6 +528,86 @@ namespace UltimateOrb.Mathematics {
                         }
                     }
                     return (highDividend - p) >> c;
+                }
+            }
+        }
+
+        [System.CLSCompliantAttribute(false)]
+        [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        public static ULong BigRemNoThrow(ULong dividend_lo_lo, ULong dividend_lo_hi, ULong dividend_hi_lo, ULong dividend_hi_hi, ULong divisor_lo, ULong divisor_hi, out ULong result_hi) {
+            unchecked {
+                if (0u == dividend_hi_lo && 0u == dividend_hi_hi) {
+                    return Remainder(dividend_lo_lo, dividend_lo_hi, divisor_lo, divisor_hi, out result_hi);
+                } else if (0u == divisor_hi && ULong.MaxValue > divisor_lo) {
+                    result_hi = 0;
+                    return Remainder(dividend_lo_lo, Remainder(dividend_lo_hi, dividend_hi_lo, divisor_lo), divisor_lo);
+                } else {
+                    // 2017Nov01
+                    var dividend_lo_lo_ = dividend_lo_lo;
+                    var dividend_lo_hi_ = dividend_lo_hi;
+                    var dividend_hi_lo_ = dividend_hi_lo;
+                    var dividend_hi_hi_ = dividend_hi_hi;
+                    var divisor_lo_ = divisor_lo;
+                    var divisor_hi_ = divisor_hi;
+                    var c = 0;
+                    if (0 <= (Long)divisor_hi_) {
+                        do {                            
+                            divisor_lo_ = ShiftLeft(divisor_lo_, divisor_hi_, out divisor_hi_);
+                            ++c;
+                        } while (0 <= (Long)divisor_hi_);
+                        dividend_hi_hi_ = ShiftLeft(dividend_hi_lo_, dividend_hi_hi_, c);
+                        dividend_hi_lo_ = ShiftLeft(dividend_lo_hi_, dividend_hi_lo_, c);
+                        dividend_lo_lo_ = ShiftLeft(dividend_lo_lo_, dividend_lo_hi_, c, out dividend_lo_hi_);
+                    }
+                    ULong p_lo;
+                    ULong p_hi;
+                    if (dividend_hi_hi_ < divisor_hi_) {
+                        p_lo = BigMul(BigDivRemPartialInternal(dividend_hi_lo_, dividend_hi_hi_, divisor_hi_, out dividend_hi_lo_), divisor_lo_, out p_hi);
+                    } else {
+                        p_lo = BigMul(Math.DivRem(dividend_hi_lo_, divisor_hi_, out dividend_hi_lo_), divisor_lo_, out p_hi);
+                        p_hi += divisor_lo_;
+                    }
+                    /*
+                    p_lo = BigMul(DivRem(dividend_hi_lo_, dividend_hi_hi_, divisor_hi_, 0, out dividend_hi_lo_, out var ignored0, out var q_hi), divisor_lo_, out p_hi);
+                    if (1 == q_hi) {
+                        p_hi += divisor_lo_;
+                    }
+                    */
+                    if (LessThan(dividend_lo_hi_, dividend_hi_lo_, p_lo, p_hi)) {
+                        {
+                            dividend_lo_hi_ = AddUnchecked(dividend_lo_hi_, dividend_hi_lo_, divisor_lo_, divisor_hi_, out dividend_hi_lo_);
+                        }
+                        if (GreaterThanOrEqual(dividend_lo_hi_, dividend_hi_lo_, divisor_lo_, divisor_hi_)) {
+                            if (LessThan(dividend_lo_hi_, dividend_hi_lo_, p_lo, p_hi)) {
+                                dividend_lo_hi_ = AddUnchecked(dividend_lo_hi_, dividend_hi_lo_, divisor_lo_, divisor_hi_, out dividend_hi_lo_);
+                            }
+                        }
+                    }
+                    dividend_lo_hi_ = SubtractUnchecked(dividend_lo_hi_, dividend_hi_lo_, p_lo, p_hi, out dividend_hi_lo_);
+                    if (dividend_hi_lo_ < divisor_hi_) {
+                        p_lo = BigMul(BigDivRemPartialInternal(dividend_lo_hi_, dividend_hi_lo_, divisor_hi_, out dividend_lo_hi_), divisor_lo_, out p_hi);
+                    } else {
+                        p_lo = BigMul(Math.DivRem(dividend_lo_hi_, divisor_hi_, out dividend_lo_hi_), divisor_lo_, out p_hi);
+                        p_hi += divisor_lo_;
+                    }
+                    /*
+                    p_lo = BigMul(DivRem(dividend_lo_hi_, dividend_hi_lo_, divisor_hi_, 0, out dividend_lo_hi_, out var ignored1, out var q_lo), divisor_lo_, out p_hi);
+                    if (1 == q_lo) {
+                        p_hi += divisor_lo_;
+                    }
+                    */
+                    if (LessThan(dividend_lo_lo_, dividend_lo_hi_, p_lo, p_hi)) {
+                        {
+                            dividend_lo_lo_ = AddUnchecked(dividend_lo_lo_, dividend_lo_hi_, divisor_lo_, divisor_hi_, out dividend_lo_hi_);
+                        }
+                        if (GreaterThanOrEqual(dividend_lo_lo_, dividend_lo_hi_, divisor_lo_, divisor_hi_)) {
+                            if (LessThan(dividend_lo_lo_, dividend_lo_hi_, p_lo, p_hi)) {
+                                dividend_lo_lo_ = AddUnchecked(dividend_lo_lo_, dividend_lo_hi_, divisor_lo_, divisor_hi_, out dividend_lo_hi_);
+                            }
+                        }
+                    }
+                    dividend_lo_lo_ = SubtractUnchecked(dividend_lo_lo_, dividend_lo_hi_, p_lo, p_hi, out dividend_lo_hi_);
+                    return ShiftRightUnsigned(dividend_lo_lo_, dividend_lo_hi_, c, out result_hi);
                 }
             }
         }
@@ -588,8 +668,8 @@ namespace UltimateOrb.Mathematics {
                     int c = 0;
                     if (0 <= (Long)divisor) {
                         do {
-                            ++c;
                             divisor <<= 1;
+                            ++c;
                         } while (0 <= (Long)divisor);
                         highDividend = (highDividend << c) | (lowDividend >> (ULong_Misc.BitSizeAsIntUnchecked - c));
                         lowDividend = lowDividend << c;
@@ -651,8 +731,8 @@ namespace UltimateOrb.Mathematics {
                     int c = 0;
                     if (0 <= (Long)divisor) {
                         do {
-                            ++c;
                             divisor <<= 1;
+                            ++c;
                         } while (0 <= (Long)divisor);
                         highDividend = (highDividend << c) | (lowDividend >> (ULong_Misc.BitSizeAsIntUnchecked - c));
                         lowDividend = lowDividend << c;
@@ -712,8 +792,8 @@ namespace UltimateOrb.Mathematics {
                     int c = 0;
                     if (0 <= (Long)divisor) {
                         do {
-                            ++c;
                             divisor <<= 1;
+                            ++c;
                         } while (0 <= (Long)divisor);
                         highDividend = (highDividend << c) | (lowDividend >> (ULong_Misc.BitSizeAsIntUnchecked - c));
                         lowDividend = lowDividend << c;

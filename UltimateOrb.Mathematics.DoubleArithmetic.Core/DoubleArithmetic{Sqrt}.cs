@@ -61,7 +61,7 @@ namespace UltimateOrb.Mathematics {
                 if (l < lo) {
                     ++h;
                 }
-                var @new = MathEx.BigDivUnchecked(l, h, old) >> 1;
+                var @new = MathEx.BigDivNoThrow(l, h, old) >> 1;
                 l = MathEx.BigSquare(@new, out h);
                 if ((h > hi) || ((h == hi) && (l > lo))) {
                     return @new - (ULong)1u;
@@ -86,7 +86,7 @@ namespace UltimateOrb.Mathematics {
                 if (l < lo) {
                     ++h;
                 }
-                var @new = MathEx.BigDivUnchecked(l, h, old) >> 1;
+                var @new = MathEx.BigDivNoThrow(l, h, old) >> 1;
                 l = MathEx.BigSquare(@new, out h);
                 if ((h > hi) || ((h == hi) && (l > lo))) {
                     remainder = lo - l - ((@new << 1) - 1u);
@@ -126,7 +126,7 @@ namespace UltimateOrb.Mathematics {
                     if (l < lo) {
                         ++h;
                     }
-                    var @new = MathEx.BigDivUnchecked(l, h, old) >> 1;
+                    var @new = MathEx.BigDivNoThrow(l, h, old) >> 1;
                     l = MathEx.BigSquare(@new, out h);
                     if ((h > hi) || ((h == hi) && (l > lo))) {
                         return @new - (ULong)1u;
@@ -149,7 +149,7 @@ namespace UltimateOrb.Mathematics {
                     if (l < lo) {
                         ++h;
                     }
-                    var @new = MathEx.BigDivUnchecked(l, h, old) >> 1;
+                    var @new = MathEx.BigDivNoThrow(l, h, old) >> 1;
                     l = MathEx.BigSquare(@new, out h);
                     if ((h > hi) || ((h == hi) && (l > lo))) {
                         --@new;
@@ -235,7 +235,7 @@ namespace UltimateOrb.Mathematics {
                     if (l < lo) {
                         ++h;
                     }
-                    var @new = MathEx.BigDivUnchecked(l, h, old) >> 1;
+                    var @new = MathEx.BigDivNoThrow(l, h, old) >> 1;
                     l = MathEx.BigSquare(@new, out h);
                     if ((h > radicand) || ((h == radicand) && (l > lo))) {
                         --@new;
