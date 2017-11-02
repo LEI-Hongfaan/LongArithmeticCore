@@ -551,7 +551,7 @@ namespace UltimateOrb.Mathematics {
                     var divisor_hi_ = divisor_hi;
                     var c = 0;
                     if (0 <= (Long)divisor_hi_) {
-                        do {                            
+                        do {
                             divisor_lo_ = ShiftLeft(divisor_lo_, divisor_hi_, out divisor_hi_);
                             ++c;
                         } while (0 <= (Long)divisor_hi_);
