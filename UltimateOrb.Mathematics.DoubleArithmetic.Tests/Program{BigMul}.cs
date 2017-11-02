@@ -9,6 +9,7 @@ namespace ThisAssembly {
     using TestModule = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations.TestModule;
     using ArithmeticOperations = UltimateOrb.Mathematics.Internal.Testing.ArithmeticOperations;
     using DoubleArithmetic = UltimateOrb.Mathematics.DoubleArithmetic;
+    using FsCheck.Xunit;
 
     public partial class Program {
 
@@ -50,42 +51,32 @@ namespace ThisAssembly {
             return Int64ArrayToBigIntegerUnsigned(((object)bits) as Int64[]);
         }
 
-        [Fact]
-        public void Test_BigMul_1() {
-            var run_count = 1000000;
-            Func<Tuple<ulong, ulong, ulong, ulong>, bool> predicate = (a) => {
-                var m0 = a.Item1;
-                var m1 = a.Item2;
-                var n0 = a.Item3;
-                var n1 = a.Item4;
-                var d0 = DoubleArithmetic.BigMul(m0, m1, n0, n1, out UInt64 d1, out UInt64 d2, out UInt64 d3);
-                var m = UInt64ArrayToBigIntegerUnsigned(m0, m1);
-                var n = UInt64ArrayToBigIntegerUnsigned(n0, n1);
-                var p = m * n;
-                var d = UInt64ArrayToBigIntegerUnsigned(d0, d1, d2, d3);
-                return p == d;
-            };
-            FsCheck.Prop.ForAll(predicate).Check(new Configuration() { MaxNbOfTest = run_count });
-            return;
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_1(Tuple<ulong, ulong, ulong, ulong> a) {
+            var m0 = a.Item1;
+            var m1 = a.Item2;
+            var n0 = a.Item3;
+            var n1 = a.Item4;
+            var d0 = DoubleArithmetic.BigMul(m0, m1, n0, n1, out UInt64 d1, out UInt64 d2, out UInt64 d3);
+            var m = UInt64ArrayToBigIntegerUnsigned(m0, m1);
+            var n = UInt64ArrayToBigIntegerUnsigned(n0, n1);
+            var p = m * n;
+            var d = UInt64ArrayToBigIntegerUnsigned(d0, d1, d2, d3);
+            return p == d;
         }
 
-        [Fact]
-        public void Test_BigMul_2() {
-            var run_count = 1000000;
-            Func<Tuple<ulong, ulong, ulong, ulong>, bool> predicate = (a) => {
-                var m0 = a.Item1;
-                var m1 = a.Item2;
-                var n0 = a.Item3;
-                var n1 = a.Item4;
-                var d0 = DoubleArithmetic.BigMul(m0, unchecked((Int64)m1), n0, unchecked((Int64)n1), out UInt64 d1, out UInt64 d2, out Int64 d3);
-                var m = UInt64ArrayToBigInteger(m0, m1);
-                var n = UInt64ArrayToBigInteger(n0, n1);
-                var p = m * n;
-                var d = UInt64ArrayToBigInteger(d0, d1, d2, unchecked((UInt64)d3));
-                return p == d;
-            };
-            FsCheck.Prop.ForAll(predicate).Check(new Configuration() { MaxNbOfTest = run_count });
-            return;
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_2(Tuple<ulong, ulong, ulong, ulong> a) {
+            var m0 = a.Item1;
+            var m1 = a.Item2;
+            var n0 = a.Item3;
+            var n1 = a.Item4;
+            var d0 = DoubleArithmetic.BigMul(m0, unchecked((Int64)m1), n0, unchecked((Int64)n1), out UInt64 d1, out UInt64 d2, out Int64 d3);
+            var m = UInt64ArrayToBigInteger(m0, m1);
+            var n = UInt64ArrayToBigInteger(n0, n1);
+            var p = m * n;
+            var d = UInt64ArrayToBigInteger(d0, d1, d2, unchecked((UInt64)d3));
+            return p == d;
         }
     }
 }
