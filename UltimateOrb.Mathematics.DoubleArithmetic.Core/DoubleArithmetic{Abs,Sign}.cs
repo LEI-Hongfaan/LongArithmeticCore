@@ -17,6 +17,23 @@ namespace UltimateOrb.Mathematics {
 
     public static partial class DoubleArithmetic {
 
+        /// <summary>
+        ///     <para>
+        ///         yangxy test commit
+        ///     </para>
+        /// </summary>
+        /// <param name="value_lo">
+        ///     <para>The <c>value_lo</c> part of the current bit pattern.</para>
+        /// </param>
+        /// <param name="value_hi">
+        ///     <para>The <c>value_hi</c> part of the current bit pattern.</para>
+        /// </param>
+        /// <param name="result_hi">
+        ///     <para>The <c>result_hi</c> part of the next bit pattern.</para>
+        /// </param>
+        /// <returns>
+        ///     <para>The <c>result_hi</c> part of the next bit pattern.</para>
+        /// </returns>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         public static ULong AbsSignedAsUnsigned(ULong value_lo, Long value_hi, out ULong result_hi) {
