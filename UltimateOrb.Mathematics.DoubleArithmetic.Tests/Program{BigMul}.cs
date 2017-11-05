@@ -124,12 +124,30 @@ namespace ThisAssembly {
         }
 
         [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_3_1() {
+            var m0 = 0Xe000000000000006UL;
+            var m1 = 0X0000000000000001UL;
+            var n0 = 0Xe000000000000006UL;
+            var n1 = 0X0000000000000001UL;
+            return Test_BigMul_1(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
         public bool Test_BigMul_2_2() {
             var m0 = 15565588221936131312UL;
             var m1 = 16772529834207146279UL;
             var n0 = 17300158191727734462UL;
             var n1 = 2604930238074063360UL;
-            return Test_BigMul_0(m0, m1, n0, n1);
+            return Test_BigMul_0(m0, m1, n0, n1); 
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_3_2() {
+            var m0 = 15565588221936131312UL;
+            var m1 = 16772529834207146279UL;
+            var n0 = 17300158191727734462UL;
+            var n1 = 2604930238074063360UL;
+            return Test_BigMul_1(m0, m1, n0, n1);
         }
 
         [Property(QuietOnSuccess = true)]
