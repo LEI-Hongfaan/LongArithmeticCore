@@ -42,7 +42,7 @@ namespace ThisAssembly {
                 return a;
             }
             if (1 == c) {
-                return bits[0];
+                return unchecked((UInt64)bits[0]);
             }
             return default(System.Numerics.BigInteger);
         }
@@ -52,31 +52,172 @@ namespace ThisAssembly {
         }
 
         [Property(MaxTest = 1000000, QuietOnSuccess = true)]
-        public bool Test_BigMul_1(Tuple<ulong, ulong, ulong, ulong> a) {
-            var m0 = a.Item1;
-            var m1 = a.Item2;
-            var n0 = a.Item3;
-            var n1 = a.Item4;
-            var d0 = DoubleArithmetic.BigMul(m0, m1, n0, n1, out UInt64 d1, out UInt64 d2, out UInt64 d3);
-            var m = UInt64ArrayToBigIntegerUnsigned(m0, m1);
-            var n = UInt64ArrayToBigIntegerUnsigned(n0, n1);
-            var p = m * n;
-            var d = UInt64ArrayToBigIntegerUnsigned(d0, d1, d2, d3);
-            return p == d;
+        public bool Test_BigMul_0(ulong m0, ulong m1, ulong n0, ulong n1) {
+            var mm = UInt64ArrayToBigIntegerUnsigned(m0, m1);
+            var nn = UInt64ArrayToBigIntegerUnsigned(n0, n1);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul(m0, m1, n0, n1, out UInt64 p11, out UInt64 p12, out UInt64 p13);
+            var p1p = UInt64ArrayToBigIntegerUnsigned(p10, p11, p12, p13);
+            return p0p == p1p;
         }
 
         [Property(MaxTest = 1000000, QuietOnSuccess = true)]
-        public bool Test_BigMul_2(Tuple<ulong, ulong, ulong, ulong> a) {
-            var m0 = a.Item1;
-            var m1 = a.Item2;
-            var n0 = a.Item3;
-            var n1 = a.Item4;
-            var d0 = DoubleArithmetic.BigMul(m0, unchecked((Int64)m1), n0, unchecked((Int64)n1), out UInt64 d1, out UInt64 d2, out Int64 d3);
-            var m = UInt64ArrayToBigInteger(m0, m1);
-            var n = UInt64ArrayToBigInteger(n0, n1);
-            var p = m * n;
-            var d = UInt64ArrayToBigInteger(d0, d1, d2, unchecked((UInt64)d3));
-            return p == d;
+        public bool Test_BigMul_1(ulong m0, ulong m1, ulong n0, ulong n1) {
+            var mm = UInt64ArrayToBigInteger(m0, m1);
+            var nn = UInt64ArrayToBigInteger(n0, n1);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul(m0, unchecked((Int64)m1), n0, unchecked((Int64)n1), out UInt64 p11, out UInt64 p12, out Int64 p13);
+            var p1p = UInt64ArrayToBigInteger(p10, p11, p12, unchecked((UInt64)p13));
+            return p0p == p1p;
+        }
+
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_2(ulong m0, ulong n0) {
+            var mm = UInt64ArrayToBigIntegerUnsigned(m0);
+            var nn = UInt64ArrayToBigIntegerUnsigned(n0);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul(m0, n0, out UInt64 p11);
+            var p1p = UInt64ArrayToBigIntegerUnsigned(p10, p11);
+            return p0p == p1p;
+        }
+
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_3(ulong m0, ulong n0) {
+            var mm = UInt64ArrayToBigInteger(m0);
+            var nn = UInt64ArrayToBigInteger(n0);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul(unchecked((Int64)m0), unchecked((Int64)n0), out Int64 p11);
+            var p1p = UInt64ArrayToBigInteger(p10, unchecked((UInt64)p11));
+            return p0p == p1p;
+        }
+
+
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_8(ulong m0, ulong n0) {
+            var mm = UInt64ArrayToBigIntegerUnsigned(m0);
+            var nn = UInt64ArrayToBigIntegerUnsigned(n0);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul_A_Karatsuba(m0, n0, out UInt64 p11);
+            var p1p = UInt64ArrayToBigIntegerUnsigned(p10, p11);
+            return p0p == p1p;
+        }
+
+        /*
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigMul_9(ulong m0, ulong n0) {
+            var mm = UInt64ArrayToBigInteger(m0);
+            var nn = UInt64ArrayToBigInteger(n0);
+            var p0p = mm * nn;
+            var p10 = DoubleArithmetic.BigMul_A_Karatsuba(unchecked((Int64)m0), unchecked((Int64)n0), out Int64 p11);
+            var p1p = UInt64ArrayToBigInteger(p10, unchecked((UInt64)p11));
+            return p0p == p1p;
+        }
+        */
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_2_1() {
+            var m0 = 0Xe000000000000006UL;
+            var m1 = 0X0000000000000001UL;
+            var n0 = 0Xe000000000000006UL;
+            var n1 = 0X0000000000000001UL;
+            return Test_BigMul_0(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_2_2() {
+            var m0 = 15565588221936131312UL;
+            var m1 = 16772529834207146279UL;
+            var n0 = 17300158191727734462UL;
+            var n1 = 2604930238074063360UL;
+            return Test_BigMul_0(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_4() {
+            var cc = 0UL;
+            foreach (var a0 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                var m0 = unchecked((ulong)a0);
+                foreach (var a1 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                    var m1 = unchecked((ulong)a1);
+                    foreach (var a2 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                        var n0 = unchecked((ulong)a2);
+                        foreach (var a3 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                            var n1 = unchecked((ulong)a3);
+                            if (!Test_BigMul_0(m0, m1, n0, n1)) {
+                                return false;
+                            }
+                            ++cc;
+                        }
+                    }
+                }
+            }
+            if (0 != (cc ^ cc)) {
+                return false;
+            }
+            return true;
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_5() {
+            var cc = 0UL;
+            foreach (var a0 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                var m0 = unchecked((ulong)a0);
+                foreach (var a1 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                    var m1 = unchecked((ulong)a1);
+                    foreach (var a2 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                        var n0 = unchecked((ulong)a2);
+                        foreach (var a3 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude5)) {
+                            var n1 = unchecked((ulong)a3);
+                            if (!Test_BigMul_1(m0, m1, n0, n1)) {
+                                return false;
+                            }
+                            ++cc;
+                        }
+                    }
+                }
+            }
+            if (0 != (cc ^ cc)) {
+                return false;
+            }
+            return true;
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_6() {
+            var cc = 0UL;
+            foreach (var a0 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude10)) {
+                var m0 = unchecked((ulong)a0);
+                foreach (var a2 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude10)) {
+                    var n0 = unchecked((ulong)a2);
+                    if (!Test_BigMul_2(m0, n0)) {
+                        return false;
+                    }
+                    ++cc;
+                }
+            }
+            if (0 != (cc ^ cc)) {
+                return false;
+            }
+            return true;
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_7() {
+            var cc = 0UL;
+            foreach (var a0 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude10)) {
+                var m0 = unchecked((ulong)a0);
+                foreach (var a2 in default(UltimateOrb.Mathematics.Internal.Testing.Int64CollectionTestDataSourceMagnitude10)) {
+                    var n0 = unchecked((ulong)a2);
+                    if (!Test_BigMul_3(m0, n0)) {
+                        return false;
+                    }
+                    ++cc;
+                }
+            }
+            if (0 != (cc ^ cc)) {
+                return false;
+            }
+            return true;
         }
     }
 }

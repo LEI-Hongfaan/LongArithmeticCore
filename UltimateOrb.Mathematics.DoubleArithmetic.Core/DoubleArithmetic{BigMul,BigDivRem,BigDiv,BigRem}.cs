@@ -411,22 +411,34 @@ namespace UltimateOrb.Mathematics {
                 var sm = unchecked(sh + sl);
                 var tl = AddUnchecked(hhl, hhh, lll, llh, out ULong th);
                 var mml = BigMul(fm, sm, out ULong mmh);
+                var dh = (ULong)0;
                 if (fm < fl) {
-                    mml = AddUnchecked(mml, mmh, 0, sm, out mmh);
-                }
-                if (sm < sl) {
-                    mml = AddUnchecked(mml, mmh, 0, fm, out mmh);
-                }
-                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
-                llh = unchecked(llh + mml);
-                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
-                var m = unchecked(fm + sm);
-                var n = (m >> 1) | (m < sm ? ((ULong)1) << (64 - 1) : 0);
-                if (n < mmh) {
                     unchecked {
-                        --hhh;
+                        ++dh;
+                        mmh += sm;
                     }
                 }
+                if (sm < sl) {
+                    unchecked {
+                        ++dh;
+                        mmh += fm;
+                    }
+                }
+                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
+                var dl = unchecked(fm + sm);
+                if (dl < fm) {
+                    unchecked {
+                        ++dh;
+                    }
+                }
+                llh = unchecked(llh + mml);
+                if (llh < mml) {
+                    hhl = IncreaseUnchecked(hhl, hhh, out hhh);
+                }
+                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
+                dl = ShiftRightUnsigned(dl, dh, out dh);
+                dl = SubtractUnchecked(dl, dh, mmh, 0, out dh);
+                hhh = unchecked(hhh + dh);
                 result_hi_hi = hhh;
                 result_hi_lo = hhl;
                 result_lo_hi = llh;
@@ -448,22 +460,34 @@ namespace UltimateOrb.Mathematics {
                 var sm = unchecked(sh + sl);
                 var tl = AddUnchecked(hhl, hhh, lll, llh, out ULong th);
                 var mml = BigMul(fm, sm, out ULong mmh);
+                var dh = (ULong)0;
                 if (fm < fl) {
-                    mml = AddUnchecked(mml, mmh, 0, sm, out mmh);
-                }
-                if (sm < sl) {
-                    mml = AddUnchecked(mml, mmh, 0, fm, out mmh);
-                }
-                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
-                llh = unchecked(llh + mml);
-                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
-                var m = unchecked(fm + sm);
-                var n = (m >> 1) | (m < sm ? ((ULong)1) << (64 - 1) : 0);
-                if (n < mmh) {
                     unchecked {
-                        --hhh;
+                        ++dh;
+                        mmh += sm;
                     }
                 }
+                if (sm < sl) {
+                    unchecked {
+                        ++dh;
+                        mmh += fm;
+                    }
+                }
+                mml = SubtractUnchecked(mml, mmh, tl, th, out mmh);
+                var dl = unchecked(fm + sm);
+                if (dl < fm) {
+                    unchecked {
+                        ++dh;
+                    }
+                }
+                llh = unchecked(llh + mml);
+                if (llh < mml) {
+                    hhl = IncreaseUnchecked(hhl, hhh, out hhh);
+                }
+                hhl = AddUnchecked(hhl, hhh, mmh, 0, out hhh);
+                dl = ShiftRightUnsigned(dl, dh, out dh);
+                dl = SubtractUnchecked(dl, dh, mmh, 0, out dh);
+                hhh = unchecked(hhh + dh);
                 if (0 > unchecked((Long)fh)) {
                     hhl = SubtractUnchecked(hhl, hhh, sl, sh, out hhh);
                 }
