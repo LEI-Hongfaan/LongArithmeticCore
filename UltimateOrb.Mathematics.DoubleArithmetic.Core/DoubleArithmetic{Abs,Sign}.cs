@@ -19,20 +19,21 @@ namespace UltimateOrb.Mathematics {
 
         /// <summary>
         ///     <para>
-        ///         yangxy test commit
+        ///         Computes the absolute value of the specified value of a signed operand with double-precision data.
+        ///         The result is an unsigned value with double-precision data.
         ///     </para>
         /// </summary>
         /// <param name="value_lo">
-        ///     <para>The <c>value_lo</c> part of the current bit pattern.</para>
+        ///     <para>The <c>lo</c> bits of the double-precision data of the operand.</para>
         /// </param>
         /// <param name="value_hi">
-        ///     <para>The <c>value_hi</c> part of the current bit pattern.</para>
+        ///     <para>The <c>hi</c> bits of the double-precision data of the operand.</para>
         /// </param>
         /// <param name="result_hi">
-        ///     <para>The <c>result_hi</c> part of the next bit pattern.</para>
+        ///     <para>The <c>hi</c> bits of the double-precision data of the result.</para>
         /// </param>
         /// <returns>
-        ///     <para>The <c>result_hi</c> part of the next bit pattern.</para>
+        ///     <para>The <c>lo</c> bits of the double-precision data of the result.</para>
         /// </returns>
         [System.CLSCompliantAttribute(false)]
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
