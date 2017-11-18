@@ -675,6 +675,33 @@ namespace UltimateOrb.Mathematics {
             }
         }
 
+        [System.CLSCompliantAttribute(false)]
+        [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        public static ULong BigSquare(ULong value_lo, ULong value_hi, out ULong result_lo_hi, out ULong result_hi_lo, out ULong result_hi_hi) {
+            unchecked {
+                {
+                    // 2017Nov18
+                    var fl = value_lo;
+                    var fh = value_hi;
+                    var lll = BigMul(fl, fl, out ULong llh);
+                    var lhl = BigMul(fl, fh, out ULong lhh);
+                    var hll = lhl;
+                    var hlh = lhh;
+                    var hhl = BigMul(fh, fh, out ULong hhh);
+                    lhl = AddUnchecked(lhl, lhh, llh, 0, out lhh);
+                    lhl = AddUnchecked(lhl, lhh, hll, hlh, out lhh);
+                    if (LessThan(lhl, lhh, hll, hlh)) {
+                        unchecked {
+                            ++hhh;
+                        }
+                    }
+                    result_hi_lo = AddUnchecked(hhl, hhh, lhh, 0, out result_hi_hi);
+                    result_lo_hi = lhl;
+                    return lll;
+                }
+            }
+        }
+
         [System.Runtime.CompilerServices.MethodImplAttribute(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
         internal static ULong BigDivRemInternal(ULong lowDividend, ULong highDividend, ULong divisor, out ULong remainder) {
             unchecked {

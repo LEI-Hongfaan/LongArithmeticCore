@@ -91,7 +91,6 @@ namespace ThisAssembly {
             return p0p == p1p;
         }
 
-
         [Property(MaxTest = 1000000, QuietOnSuccess = true)]
         public bool Test_BigMul_8(ulong m0, ulong n0) {
             var mm = UInt64ArrayToBigIntegerUnsigned(m0);
@@ -138,7 +137,7 @@ namespace ThisAssembly {
             var m1 = 16772529834207146279UL;
             var n0 = 17300158191727734462UL;
             var n1 = 2604930238074063360UL;
-            return Test_BigMul_0(m0, m1, n0, n1); 
+            return Test_BigMul_0(m0, m1, n0, n1);
         }
 
         [Property(QuietOnSuccess = true)]
@@ -147,6 +146,42 @@ namespace ThisAssembly {
             var m1 = 16772529834207146279UL;
             var n0 = 17300158191727734462UL;
             var n1 = 2604930238074063360UL;
+            return Test_BigMul_1(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_2_3() {
+            var m0 = 4614276960546034880UL;
+            var m1 = 15600135188658259462UL;
+            var n0 = 15231609951630653244UL;
+            var n1 = 14447548130359050562UL;
+            return Test_BigMul_0(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_3_3() {
+            var m0 = 4614276960546034880UL;
+            var m1 = 15600135188658259462UL;
+            var n0 = 15231609951630653244UL;
+            var n1 = 14447548130359050562UL;
+            return Test_BigMul_1(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_2_4() {
+            var m0 = 14250242442023403520UL;
+            var m1 = 13043001765010608401UL;
+            var n0 = 18306435212701073408UL;
+            var n1 = 15679297132262522895UL;
+            return Test_BigMul_0(m0, m1, n0, n1);
+        }
+
+        [Property(QuietOnSuccess = true)]
+        public bool Test_BigMul_3_4() {
+            var m0 = 14250242442023403520UL;
+            var m1 = 13043001765010608401UL;
+            var n0 = 18306435212701073408UL;
+            var n1 = 15679297132262522895UL;
             return Test_BigMul_1(m0, m1, n0, n1);
         }
 
@@ -236,6 +271,24 @@ namespace ThisAssembly {
                 return false;
             }
             return true;
+        }
+
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigSquare_0(ulong m0) {
+            var mm = UInt64ArrayToBigIntegerUnsigned(m0);
+            var p0p = mm * mm;
+            var p10 = DoubleArithmetic.BigSquare(m0, out UInt64 p11);
+            var p1p = UInt64ArrayToBigIntegerUnsigned(p10, p11);
+            return p0p == p1p;
+        }
+
+        [Property(MaxTest = 1000000, QuietOnSuccess = true)]
+        public bool Test_BigSquare_2(ulong m0, ulong m1) {
+            var mm = UInt64ArrayToBigIntegerUnsigned(m0, m1);
+            var p0p = mm * mm;
+            var p10 = DoubleArithmetic.BigSquare(m0, m1, out UInt64 p11, out UInt64 p12, out UInt64 p13);
+            var p1p = UInt64ArrayToBigIntegerUnsigned(p10, p11, p12, p13);
+            return p0p == p1p;
         }
     }
 }
